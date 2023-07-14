@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
-class UsersFakeSeeder extends Seeder
+use App\Models\Pacientes;
+
+class PatientsFakeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class UsersFakeSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)->create();
+        Pacientes::factory(5)->create();
     }
 }
