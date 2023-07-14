@@ -16,7 +16,7 @@ use TCG\Voyager\Facades\Voyager;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::redirect('/', '/admin', 301);
+Route::redirect('/', '/admin', 301);
 
 
 Route::group(['prefix' => 'admin'], function () {
