@@ -134,7 +134,7 @@ class DataTypesTableSeeder extends Seeder
                 'slug' => 'materiales',
                 'display_name_singular' => 'Material',
                 'display_name_plural' => 'Materiales',
-                'icon' => NULL,
+                'icon' => 'voyager-archive',
                 'model_name' => 'App\\Models\\Materiales',
                 'policy_name' => NULL,
                 'controller' => NULL,
@@ -188,7 +188,7 @@ class DataTypesTableSeeder extends Seeder
                 'slug' => 'pacientes',
                 'display_name_singular' => 'Paciente',
                 'display_name_plural' => 'Pacientes',
-                'icon' => 'voyager-group',
+                'icon' => 'voyager-people',
                 'model_name' => 'App\\Models\\Pacientes',
                 'policy_name' => NULL,
                 'controller' => NULL,
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 18:58:42',
-                'updated_at' => '2023-07-14 18:59:25',
+                'updated_at' => '2023-07-18 01:30:55',
             ),
         ));
         

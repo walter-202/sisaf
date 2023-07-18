@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$diTIDr8EfGiyocGfjCcTXuRn8rQmlMdIMLyp/bHdG3CJfsAFO/olm',
-                'remember_token' => 'staSfYdcCWLHTUMgV2BCPe5YBX1hTpqhxAVHE8v9Q1QNb1HWQVeg7FDJL06y',
+                'remember_token' => 'oR103MbkbyaTx94sYq1dELN2TMhWTmpwAJO5eBujB9073nEzoWDHPFteFbI8',
                 'settings' => '{"locale":"es"}',
                 'created_at' => '2023-07-07 02:43:33',
                 'updated_at' => '2023-07-14 19:08:11',
@@ -53,7 +53,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'role_id' => 3,
-                'name' => 'Dra Cotrina',
+                'name' => 'Dra. Cotrina',
                 'email' => 'admin@gmail.com',
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'settings' => '{"locale":"es"}',
                 'created_at' => '2023-07-14 19:08:52',
-                'updated_at' => '2023-07-14 19:08:52',
+                'updated_at' => '2023-07-17 22:06:57',
                 'deleted_at' => NULL,
             ),
         ));
