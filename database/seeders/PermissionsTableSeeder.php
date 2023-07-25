@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PermissionsTableSeeder extends Seeder
 {
@@ -14,12 +15,12 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('permissions')->delete();
-        
-        \DB::table('permissions')->insert(array (
-            0 => 
+
+        DB::table('permissions')->delete();
+
+        DB::table('permissions')->insert(array (
+            0 =>
             array (
                 'id' => 1,
                 'key' => 'browse_admin',
@@ -27,7 +28,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'key' => 'browse_bread',
@@ -35,7 +36,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'key' => 'browse_database',
@@ -43,7 +44,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'key' => 'browse_media',
@@ -51,7 +52,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'key' => 'browse_compass',
@@ -59,7 +60,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'key' => 'browse_menus',
@@ -67,7 +68,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'key' => 'read_menus',
@@ -75,7 +76,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'key' => 'edit_menus',
@@ -83,7 +84,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'key' => 'add_menus',
@@ -91,7 +92,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'key' => 'delete_menus',
@@ -99,7 +100,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 11,
                 'key' => 'browse_roles',
@@ -107,7 +108,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 12,
                 'key' => 'read_roles',
@@ -115,7 +116,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 13,
                 'key' => 'edit_roles',
@@ -123,7 +124,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 14,
                 'key' => 'add_roles',
@@ -131,7 +132,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 15,
                 'key' => 'delete_roles',
@@ -139,7 +140,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 16,
                 'key' => 'browse_users',
@@ -147,7 +148,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 17,
                 'key' => 'read_users',
@@ -155,7 +156,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 18,
                 'key' => 'edit_users',
@@ -163,7 +164,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 19,
                 'key' => 'add_users',
@@ -171,7 +172,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 20,
                 'key' => 'delete_users',
@@ -179,7 +180,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 21,
                 'key' => 'browse_settings',
@@ -187,7 +188,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 22,
                 'key' => 'read_settings',
@@ -195,7 +196,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 23,
                 'key' => 'edit_settings',
@@ -203,7 +204,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 24,
                 'key' => 'add_settings',
@@ -211,7 +212,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 25,
                 'key' => 'delete_settings',
@@ -219,7 +220,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-08 02:00:55',
                 'updated_at' => '2023-07-08 02:00:55',
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 36,
                 'key' => 'browse_materiales',
@@ -227,7 +228,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 12:27:49',
                 'updated_at' => '2023-07-14 12:27:49',
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 37,
                 'key' => 'read_materiales',
@@ -235,7 +236,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 12:27:49',
                 'updated_at' => '2023-07-14 12:27:49',
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 38,
                 'key' => 'edit_materiales',
@@ -243,7 +244,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 12:27:49',
                 'updated_at' => '2023-07-14 12:27:49',
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 39,
                 'key' => 'add_materiales',
@@ -251,7 +252,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 12:27:49',
                 'updated_at' => '2023-07-14 12:27:49',
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 40,
                 'key' => 'delete_materiales',
@@ -259,7 +260,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 12:27:49',
                 'updated_at' => '2023-07-14 12:27:49',
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 41,
                 'key' => 'browse_medicamentos',
@@ -267,7 +268,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-07-14 18:49:58',
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 42,
                 'key' => 'read_medicamentos',
@@ -275,7 +276,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-07-14 18:49:58',
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 43,
                 'key' => 'edit_medicamentos',
@@ -283,7 +284,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-07-14 18:49:58',
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 44,
                 'key' => 'add_medicamentos',
@@ -291,7 +292,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-07-14 18:49:58',
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 45,
                 'key' => 'delete_medicamentos',
@@ -299,7 +300,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-07-14 18:49:58',
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 46,
                 'key' => 'browse_servicios',
@@ -307,7 +308,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-07-14 18:51:23',
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 47,
                 'key' => 'read_servicios',
@@ -315,7 +316,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-07-14 18:51:23',
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 48,
                 'key' => 'edit_servicios',
@@ -323,7 +324,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-07-14 18:51:23',
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 49,
                 'key' => 'add_servicios',
@@ -331,7 +332,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-07-14 18:51:23',
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 50,
                 'key' => 'delete_servicios',
@@ -339,7 +340,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-07-14 18:51:23',
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 51,
                 'key' => 'browse_pacientes',
@@ -347,7 +348,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:58:42',
                 'updated_at' => '2023-07-14 18:58:42',
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 52,
                 'key' => 'read_pacientes',
@@ -355,7 +356,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:58:42',
                 'updated_at' => '2023-07-14 18:58:42',
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 53,
                 'key' => 'edit_pacientes',
@@ -363,7 +364,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:58:42',
                 'updated_at' => '2023-07-14 18:58:42',
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 54,
                 'key' => 'add_pacientes',
@@ -371,7 +372,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:58:42',
                 'updated_at' => '2023-07-14 18:58:42',
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 55,
                 'key' => 'delete_pacientes',
@@ -380,7 +381,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-14 18:58:42',
             ),
         ));
-        
-        
+
+
     }
 }

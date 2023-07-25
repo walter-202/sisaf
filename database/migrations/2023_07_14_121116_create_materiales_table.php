@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('costo_actual');
             $table->string('costo_ultimo');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

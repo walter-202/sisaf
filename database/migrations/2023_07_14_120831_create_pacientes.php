@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('fecha_de_nacimiento');
             $table->string('ciudad');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

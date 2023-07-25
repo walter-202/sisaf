@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PacientesTableSeeder extends Seeder
 {
@@ -14,14 +15,14 @@ class PacientesTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('pacientes')->delete();
-        
-        \DB::table('pacientes')->insert(array (
-            0 => 
+
+        DB::table('pacientes')->delete();
+
+        DB::table('pacientes')->insert(array (
+            0 =>
             array (
-                'id' => 11,
+                'id' => 1,
                 'name' => 'Paula Córdova',
                 'last_name' => 'Moreno',
                 'email' => 'campos.nadia@example.net',
@@ -32,9 +33,9 @@ class PacientesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
             ),
-            1 => 
+            1 =>
             array (
-                'id' => 12,
+                'id' => 2,
                 'name' => 'Gonzalo Garibay Segundo',
                 'last_name' => 'Ordoñez',
                 'email' => 'miriam70@example.org',
@@ -45,9 +46,9 @@ class PacientesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
             ),
-            2 => 
+            2 =>
             array (
-                'id' => 13,
+                'id' => 3,
                 'name' => 'Iván Ceja',
                 'last_name' => 'Ortíz',
                 'email' => 'gerard.covarrubias@example.com',
@@ -58,9 +59,9 @@ class PacientesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
             ),
-            3 => 
+            3 =>
             array (
-                'id' => 14,
+                'id' => 4,
                 'name' => 'Diana Mascareñas',
                 'last_name' => 'Zúñiga',
                 'email' => 'anaisabel91@example.org',
@@ -72,7 +73,7 @@ class PacientesTableSeeder extends Seeder
                 'updated_at' => '2023-07-14 19:47:26',
             ),
         ));
-        
-        
+
+
     }
 }

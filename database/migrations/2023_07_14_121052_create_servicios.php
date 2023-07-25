@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('precio');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

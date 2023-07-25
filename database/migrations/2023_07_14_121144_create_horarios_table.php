@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('horarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
