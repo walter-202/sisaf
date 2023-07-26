@@ -3,28 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class Audit extends Model implements \OwenIt\Auditing\Contracts\Audit
+class Audit extends Model implements Auditable
 {
-    use \OwenIt\Auditing\Audit;
+    use SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $guarded = [];
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $casts = [
-        'old_values'   => 'json',
-        'new_values'   => 'json',
-        // Note: Please do not add 'auditable_id' in here, as it will break non-integer PK models
-    ];
-
-    public function getSerializedDate($date)
-    {
-        return $this->serializeDate($date);
-    }
+    protected $fillable =['name','description'];
 }

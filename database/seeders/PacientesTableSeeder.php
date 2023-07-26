@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PacientesTableSeeder extends Seeder
 {
@@ -15,12 +14,12 @@ class PacientesTableSeeder extends Seeder
      */
     public function run()
     {
+        
 
-
-        DB::table('pacientes')->delete();
-
-        DB::table('pacientes')->insert(array (
-            0 =>
+        \DB::table('pacientes')->delete();
+        
+        \DB::table('pacientes')->insert(array (
+            0 => 
             array (
                 'id' => 1,
                 'name' => 'Paula Córdova',
@@ -32,8 +31,9 @@ class PacientesTableSeeder extends Seeder
                 'ciudad' => 'Oruro',
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
+                'deleted_at' => NULL,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'name' => 'Gonzalo Garibay Segundo',
@@ -45,8 +45,9 @@ class PacientesTableSeeder extends Seeder
                 'ciudad' => 'La Paz',
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
+                'deleted_at' => NULL,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'name' => 'Iván Ceja',
@@ -58,8 +59,9 @@ class PacientesTableSeeder extends Seeder
                 'ciudad' => 'La Paz',
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
+                'deleted_at' => NULL,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'name' => 'Diana Mascareñas',
@@ -71,9 +73,10 @@ class PacientesTableSeeder extends Seeder
                 'ciudad' => 'Santa Cruz',
                 'created_at' => '2023-07-14 19:47:26',
                 'updated_at' => '2023-07-14 19:47:26',
+                'deleted_at' => NULL,
             ),
         ));
-
-
+        
+        
     }
 }

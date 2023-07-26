@@ -50,6 +50,26 @@
                                 @endif
                             </form>
                         @endif
+
+
+<ul>
+    @forelse ($audits as $audit)
+    <li>
+        @lang('article.updated.metadata', $audit->getMetadata())
+
+        @foreach ($audit->getModified() as $attribute => $modified)
+        <ul>
+            <li>@lang('article.'.$audit->event.'.modified.'.$attribute, $modified)</li>
+        </ul>
+        @endforeach
+    </li>
+    @empty
+    <p>@lang('article.unavailable_audits')</p>
+    @endforelse
+</ul>
+
+
+
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-hover">
                                 <thead>
@@ -157,10 +177,10 @@
                                                     <span class="badge badge-lg" style="background-color: {{ $data->{$row->field} }}">{{ $data->{$row->field} }}</span>
                                                 @elseif($row->type == 'text')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
+                                                    <div>{{ $data->{$row->field} }}</div>
                                                 @elseif($row->type == 'text_area')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
+                                                    <div>{{  $data->{$row->field} }}</div>
                                                 @elseif($row->type == 'file' && !empty($data->{$row->field}) )
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     @if(json_decode($data->{$row->field}) !== null)
@@ -228,13 +248,7 @@
                                                 @endif
                                             </td>
                                         @endforeach
-                                        <td class="no-sort no-click bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
-                                        </td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>
