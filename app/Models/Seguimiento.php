@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Horarios extends Model implements Auditable
+
+class Seguimiento extends Model implements Auditable
 {
     use HasFactory;
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
-
-
 
 }

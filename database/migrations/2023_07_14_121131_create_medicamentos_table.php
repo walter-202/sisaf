@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('costo');
             $table->string('cantidad');
-            $table->string('costo_actual');
             $table->string('costo_ultimo');
             $table->timestamps();
             $table->softDeletes();

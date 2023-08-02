@@ -18,7 +18,6 @@ class Medicamentos extends Model implements Auditable
         'descripcion',
         'costo',
         'cantidad',
-        'costo_actual',
         'costo_ultimo',
     ];
 }

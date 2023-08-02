@@ -33,7 +33,6 @@ class CreateAuditsTable extends Migration
             $table->string('tags')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
             $table->index([$morphPrefix . '_id', $morphPrefix . '_type']);
         });
     }

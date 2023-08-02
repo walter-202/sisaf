@@ -13,17 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('horarios', function (Blueprint $table) {
+        Schema::create('historials', function (Blueprint $table) {
             $table->id();
-            $table->string('days');
-            $table->string('active');
-            $table->string('morning_start');
-            $table->string('morning_end');
-            $table->string('afternoon_start');
-            $table->string('afternoon_end');
-            $table->string('user_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horarios');
+        Schema::dropIfExists('historials');
     }
 };
