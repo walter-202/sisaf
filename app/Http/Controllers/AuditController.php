@@ -183,10 +183,6 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
             $view = "voyager::$slug.browse";
         }
 
-        // Get first available Article
-        $audits = Auditoria::with('user')->get();
-
-        // dd($audits->getModified());
 
         return Voyager::view($view, compact(
             'actions',
@@ -204,7 +200,6 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
             'usesSoftDeletes',
             'showSoftDeleted',
             'showCheckboxColumn',
-            'audits'
         ));
     }
 }

@@ -91,10 +91,24 @@
                                                 <input type="checkbox" class="select_all">
                                             </th>
                                         @endif
+                                        @foreach ($dataType->browseRows as $row)
                                             <th>
-                                                Auditorías
+                                                @if ($isServerSide && in_array($row->field, $sortableColumns))
+                                                    <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
+                                                @endif
+                                                {{ $row->getTranslatedAttribute('display_name') }}
+                                                @if ($isServerSide)
+                                                    @if ($row->isCurrentSortField($orderBy))
+                                                        @if ($sortOrder == 'asc')
+                                                            <i class="voyager-angle-up pull-right"></i>
+                                                        @else
+                                                            <i class="voyager-angle-down pull-right"></i>
+                                                        @endif
+                                                    @endif
+                                                    </a>
+                                                @endif
                                             </th>
-
+                                        @endforeach
                                         <th class="actions text-right dt-not-orderable">
                                             {{ __('voyager::generic.actions') }}</th>
                                     </tr>
@@ -108,29 +122,83 @@
                                                         id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
                                                 </td>
                                             @endif
-                                            @forelse($audits as $audit)
-                                            @lang('auditoria.'.$audit->event.'.metadata')
+                                            @foreach ($dataType->browseRows as $row)
+                                                @php
+                                                    if ($data->{$row->field . '_browse'}) {
+                                                        $data->{$row->field} = $data->{$row->field . '_browse'};
+                                                    }
+                                                @endphp
                                                 <td>
-        @foreach ($audit->getModified() as $attribute => $modified)
-            <ul>
-                <li>@lang('auditoria.'.$audit->event.'.modified.'.$attribute, $modified)</li>
-            </ul>
-        @endforeach
-                                                </td>
-                                            @empty
-                                                <td>
-                                                    @lang('auditoria.unavailable_audits')
-                                                </td>
-                                            @endforelse
-                                            <td class="no-sort no-click bread-actions">
-                                                @foreach ($actions as $action)
-                                                    @if (!method_exists($action, 'massAction'))
-                                                        @include('voyager::bread.partials.actions', [
-                                                            'action' => $action,
+                                                    @if (isset($row->details->view_browse))
+                                                        @include($row->details->view_browse, [
+                                                            'row' => $row,
+                                                            'dataType' => $dataType,
+                                                            'dataTypeContent' => $dataTypeContent,
+                                                            'content' => $data->{$row->field},
+                                                            'view' => 'browse',
+                                                            'options' => $row->details,
                                                         ])
-                                                    @endif
-                                                @endforeach
-                                            </td>
+                                                    @elseif (isset($row->details->view))
+                                                        @include($row->details->view, [
+                                                            'row' => $row,
+                                                            'dataType' => $dataType,
+                                                            'dataTypeContent' => $dataTypeContent,
+                                                            'content' => $data->{$row->field},
+                                                            'action' => 'browse',
+                                                            'view' => 'browse',
+                                                            'options' => $row->details,
+                                                        ])
+                                                    @elseif($row->type == 'image')
+                                                        <img src="@if (!filter_var($data->{$row->field}, FILTER_VALIDATE_URL)) {{ Voyager::image($data->{$row->field}) }}@else{{ $data->{$row->field} }} @endif"
+                                                            style="width:100px">
+                                                    @elseif($row->type == 'relationship')
+                                                        @include('voyager::formfields.relationship', [
+                                                            'view' => 'browse',
+                                                            'options' => $row->details,
+                                                        ])
+                                                    @elseif($row->type == 'select_multiple')
+                                                        @if (property_exists($row->details, 'relationship'))
+
+                                                            @foreach ($data->{$row->field} as $item)
+                                                                {{ $item->{$row->field} }}
+                                                            @endforeach
+                                                        @elseif(property_exists($row->details, 'options'))
+                                                            @if (!empty(json_decode($data->{$row->field})))
+                                                                @foreach (json_decode($data->{$row->field}) as $item)
+                                                                    @if (@$row->details->options->{$item})
+                                                                        {{ $row->details->options->{$item} . (!$loop->last ? ', ' : '') }}
+                                                                    @endif
+                                                                @endforeach
+                                                            @else
+                                                                {{ __('voyager::generic.none') }}
+                                                            @endif
+                                                        @endif
+                                                    @elseif($row->type == 'date' || $row->type == 'timestamp')
+                                                        @if (property_exists($row->details, 'format') && !is_null($data->{$row->field}))
+                                                            {{ \Carbon\Carbon::parse($data->{$row->field})->formatLocalized($row->details->format) }}
+                                                        @else
+                                                            {{ $data->{$row->field} }}
+                                                        @endif
+
+
+                                                        @elseif ($row->type == 'text')
+                                                            @include('voyager::multilingual.input-hidden-bread-browse')
+                                                            <div>
+                                                                {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                            </div>
+
+                                                        @else($row->type == 'text_area')
+                                                            @include('voyager::multilingual.input-hidden-bread-browse')
+                                                            <div>
+                                                                {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                            </div>
+                                                        @endif
+
+
+
+                                                </td>
+                                            @endforeach
+
                                         </tr>
                                     @endforeach
                                 </tbody>
