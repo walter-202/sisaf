@@ -158,7 +158,6 @@
                                                         ])
                                                     @elseif($row->type == 'select_multiple')
                                                         @if (property_exists($row->details, 'relationship'))
-
                                                             @foreach ($data->{$row->field} as $item)
                                                                 {{ $item->{$row->field} }}
                                                             @endforeach
@@ -179,20 +178,17 @@
                                                         @else
                                                             {{ $data->{$row->field} }}
                                                         @endif
-
-
-                                                        @elseif ($row->type == 'text')
-                                                            @include('voyager::multilingual.input-hidden-bread-browse')
-                                                            <div>
-                                                                {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
-                                                            </div>
-
-                                                        @else($row->type == 'text_area')
-                                                            @include('voyager::multilingual.input-hidden-bread-browse')
-                                                            <div>
-                                                                {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
-                                                            </div>
-                                                        @endif
+                                                    @elseif ($row->type == 'text')
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div>
+                                                            {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                        </div>
+                                                    @elseif($row->type == 'text_area')
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div>
+                                                            {{ is_array($data->{$row->field}) ? implode('- ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                        </div>
+                                                    @endif
 
 
 
@@ -322,11 +318,11 @@
                     if ($(this).prop('checked')) {
                         $('#dataTable').before(
                             '<a id="redir" href="{{ route('voyager.' . $dataType->slug . '.index', array_merge($params, ['showSoftDeleted' => 1]), true) }}"></a>'
-                            );
+                        );
                     } else {
                         $('#dataTable').before(
                             '<a id="redir" href="{{ route('voyager.' . $dataType->slug . '.index', array_merge($params, ['showSoftDeleted' => 0]), true) }}"></a>'
-                            );
+                        );
                     }
 
                     $('#redir')[0].click();
