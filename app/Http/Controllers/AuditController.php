@@ -1,38 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
-use Exception;
+
+use App\Models\Auditoria;
+use App\Models\Medicamentos;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Database\Schema\SchemaManager;
-use TCG\Voyager\Events\BreadDataAdded;
-use TCG\Voyager\Events\BreadDataDeleted;
-use TCG\Voyager\Events\BreadDataRestored;
-use TCG\Voyager\Events\BreadDataUpdated;
-use TCG\Voyager\Events\BreadImagesDeleted;
+use OwenIt\Auditing\Contracts\Audit;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
 
-        use BreadRelationshipParser;
+    use BreadRelationshipParser;
 
-        //***************************************
-        //               ____
-        //              |  _ \
-        //              | |_) |
-        //              |  _ <
-        //              | |_) |
-        //              |____/
-        //
-        //      Browse our Data Type (B)READ
-        //
-        //****************************************
+    //***************************************
+    //               ____
+    //              |  _ \
+    //              | |_) |
+    //              |  _ <
+    //              | |_) |
+    //              |____/
+    //
+    //      Browse our Data Type (B)READ
+    //
+    //****************************************
 
-        public function index(Request $request)
+    public function index(Request $request)
     {
         // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
@@ -63,9 +60,9 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
         if (strlen($dataType->model_name) != 0) {
             $model = app($dataType->model_name);
 
-            $query = $model::select($dataType->name.'.*');
+            $query = $model::select($dataType->name . '.*');
 
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
                 $query->{$dataType->scope}();
             }
 
@@ -84,9 +81,9 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
 
             if ($search->value != '' && $search->key && $search->filter) {
                 $search_filter = ($search->filter == 'equals') ? '=' : 'LIKE';
-                $search_value = ($search->filter == 'equals') ? $search->value : '%'.$search->value.'%';
+                $search_value = ($search->filter == 'equals') ? $search->value : '%' . $search->value . '%';
 
-                $searchField = $dataType->name.'.'.$search->key;
+                $searchField = $dataType->name . '.' . $search->key;
                 if ($row = $this->findSearchableRelationshipRow($dataType->rows->where('type', 'relationship'), $search->key)) {
                     $query->whereIn(
                         $searchField,
@@ -104,12 +101,12 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
                 $querySortOrder = (!empty($sortOrder)) ? $sortOrder : 'desc';
                 if (!empty($row)) {
                     $query->select([
-                        $dataType->name.'.*',
-                        'joined.'.$row->details->label.' as '.$orderBy,
+                        $dataType->name . '.*',
+                        'joined.' . $row->details->label . ' as ' . $orderBy,
                     ])->leftJoin(
-                        $row->details->table.' as joined',
-                        $dataType->name.'.'.$row->details->column,
-                        'joined.'.$row->details->key
+                        $row->details->table . ' as joined',
+                        $dataType->name . '.' . $row->details->column,
+                        'joined.' . $row->details->key
                     );
                 }
 
@@ -170,8 +167,11 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
         // Define orderColumn
         $orderColumn = [];
         if ($orderBy) {
-            $index = $dataType->browseRows->where('field', $orderBy)->keys()->first() + ($showCheckboxColumn ? 1 : 0);
-            $orderColumn = [[$index, $sortOrder ?? 'desc']];
+            $index = $dataType->browseRows->pluck('field')->search($orderBy);
+            if ($index !== false) {
+                $index += ($showCheckboxColumn ? 1 : 0);
+                $orderColumn = [[$index, $sortOrder ?? 'desc']];
+            }
         }
 
         // Define list of columns that can be sorted server side
@@ -182,6 +182,11 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
         if (view()->exists("voyager::$slug.browse")) {
             $view = "voyager::$slug.browse";
         }
+
+        // Get first available Article
+        $audits = Auditoria::with('user')->get();
+
+        // dd($audits->getModified());
 
         return Voyager::view($view, compact(
             'actions',
@@ -198,8 +203,8 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
             'defaultSearchKey',
             'usesSoftDeletes',
             'showSoftDeleted',
-            'showCheckboxColumn'
+            'showCheckboxColumn',
+            'audits'
         ));
     }
-
 }
