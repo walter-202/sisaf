@@ -235,6 +235,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-08-02 12:19:34',
                 'updated_at' => '2023-08-12 22:31:18',
             ),
+            12 => 
+            array (
+                'id' => 20,
+                'name' => 'citas',
+                'slug' => 'citas',
+                'display_name_singular' => 'Cita',
+                'display_name_plural' => 'Citas',
+                'icon' => 'voyager-ticket',
+                'model_name' => 'App\\Models\\Cita',
+                'policy_name' => NULL,
+                'controller' => 'App\\Http\\Controllers\\CitaController',
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 03:51:45',
+            ),
         ));
         
         

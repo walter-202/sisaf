@@ -459,6 +459,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-08-02 12:19:34',
                 'updated_at' => '2023-08-02 12:19:34',
             ),
+            55 => 
+            array (
+                'id' => 66,
+                'key' => 'browse_citas',
+                'table_name' => 'citas',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 02:10:14',
+            ),
+            56 => 
+            array (
+                'id' => 67,
+                'key' => 'read_citas',
+                'table_name' => 'citas',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 02:10:14',
+            ),
+            57 => 
+            array (
+                'id' => 68,
+                'key' => 'edit_citas',
+                'table_name' => 'citas',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 02:10:14',
+            ),
+            58 => 
+            array (
+                'id' => 69,
+                'key' => 'add_citas',
+                'table_name' => 'citas',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 02:10:14',
+            ),
+            59 => 
+            array (
+                'id' => 70,
+                'key' => 'delete_citas',
+                'table_name' => 'citas',
+                'created_at' => '2023-08-21 02:10:14',
+                'updated_at' => '2023-08-21 02:10:14',
+            ),
         ));
         
         
