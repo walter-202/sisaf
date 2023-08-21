@@ -217,6 +217,24 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-08-11 21:25:19',
                 'deleted_at' => NULL,
             ),
+            11 => 
+            array (
+                'id' => 14,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\User',
+                'auditable_id' => 2,
+                'old_values' => '{"remember_token":"aYrVpeOEGwSterJODTgHzV0gulgBWdJSy6H398DPhRImps2VW7trTQUL6hI1"}',
+                'new_values' => '{"remember_token":"rDHnXPoSXiz7ZWxfieyNOIybiGphTDh85AUAAMRycRuqpOP2cvOqR4VrZm02"}',
+                'url' => 'https://sisaf.test/admin/logout',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2023-08-15 02:45:46',
+                'updated_at' => '2023-08-15 02:45:46',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

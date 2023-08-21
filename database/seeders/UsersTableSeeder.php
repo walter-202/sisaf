@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$Hm8ZZR5G7fMSfo0dTtlhKuiFQy4RPb67d41QtMeX.pbR9BCLm1WfK',
-                'remember_token' => 'aYrVpeOEGwSterJODTgHzV0gulgBWdJSy6H398DPhRImps2VW7trTQUL6hI1',
+                'remember_token' => 'rDHnXPoSXiz7ZWxfieyNOIybiGphTDh85AUAAMRycRuqpOP2cvOqR4VrZm02',
                 'settings' => '{"locale":"es"}',
                 'created_at' => '2023-07-07 20:10:45',
                 'updated_at' => '2023-07-07 20:10:45',
