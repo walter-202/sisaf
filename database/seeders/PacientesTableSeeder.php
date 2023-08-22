@@ -1475,6 +1475,20 @@ class PacientesTableSeeder extends Seeder
                 'updated_at' => '2023-08-15 01:19:13',
                 'deleted_at' => NULL,
             ),
+            104 => 
+            array (
+                'id' => 105,
+                'name' => 'Jimmy',
+                'last_name' => 'Requena',
+                'email' => 'jim@bolivianontech.com',
+                'direccion' => 'La Paz, Landaeta',
+                'sexo' => 'Masculino',
+                'fecha_de_nacimiento' => '12/04/1990',
+                'ciudad' => 'La Paz',
+                'created_at' => '2023-08-21 00:43:53',
+                'updated_at' => '2023-08-21 00:43:53',
+                'deleted_at' => NULL,
+            ),
         ));
         
         
