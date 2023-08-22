@@ -102,9 +102,7 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         //     'name' =>  $emailDoctor->name,
         // ]);
 
-
         event(new BreadDataAdded($dataType, $data));
-        dd($dataType, $data, $emailDoctor);
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
