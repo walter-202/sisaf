@@ -101,6 +101,8 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         //     'email' => $emailDoctor->email,
         //     'name' =>  $emailDoctor->name,
         // ]);
+
+
         event(new BreadDataAdded($dataType, $data));
         dd($dataType, $data, $emailDoctor);
 
