@@ -93,14 +93,14 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $event->startDateTime = $starTime;
         $event->endDateTime = $endTime;
 
-        $event->addAttendee([
-            'email' => $emailPaciente->email,
-            'name' => $emailPaciente->name,
-        ]);
-        $event->addAttendee([
-            'email' => $emailDoctor->email,
-            'name' =>  $emailDoctor->name,
-        ]);
+        // $event->addAttendee([
+        //     'email' => $emailPaciente->email,
+        //     'name' => $emailPaciente->name,
+        // ]);
+        // $event->addAttendee([
+        //     'email' => $emailDoctor->email,
+        //     'name' =>  $emailDoctor->name,
+        // ]);
         event(new BreadDataAdded($dataType, $data));
         dd($dataType, $data, $emailDoctor);
 

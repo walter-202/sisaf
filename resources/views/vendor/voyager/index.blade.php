@@ -77,6 +77,8 @@
                 </ul>
             </div>
         </div>
+
+        <iframe class="Dashboard Dashboard--full" src="https://calendar.google.com/calendar/embed?src=001aa0eb0efc11defbe017a1bd125149428469f8e7c0500cb7f7c7419bb3c5ec%40group.calendar.google.com&ctz=America%2FLa_Paz" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 @stop
 
