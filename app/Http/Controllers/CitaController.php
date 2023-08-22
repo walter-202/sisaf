@@ -25,7 +25,7 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 
         $model = app($dataType->model_name);
         $query = $model->query();
-        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
+        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
             $query = $query->{$dataType->scope}();
         }
         if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
@@ -45,7 +45,7 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
             ->filter(function ($item, $key) use ($request) {
                 return $request->hasFile($item->field);
             });
-        $original_data = clone ($data);
+        $original_data = clone($data);
 
         $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
@@ -61,7 +61,7 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         }
 
         return $redirect->with([
-            'message'    => __('voyager::generic.successfully_updated') . " {$dataType->getTranslatedAttribute('display_name_singular')}",
+            'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
             'alert-type' => 'success',
         ]);
     }
@@ -80,29 +80,23 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-        $emailDoctor = User::find($request->input('user_id'))->get('email');
-        $emailPaciente = Pacientes::find($request->input('paciente_id'))->get('email');
+        $emailDoctor = User::find($request->input('user_id'))->get();
+        $emailPaciente= Pacientes::find($request->input('paciente_id'))->get('email');
 
         $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
         $endTime = (clone $starTime)->addMinutes($value = 15);
 
-        $event = new Event;
+        Event::create([
+            'name' => $request->input('motivo'),
+            'startDateTime' => $starTime,
+            'endDateTime' => $endTime,
+            'addAttendee'=>$emailPaciente,
+            'addAttendee'=>$emailDoctor->email,
 
-        $event->name = $request->input('servicio_id');
-        $event->description = $request->input('motivo');
-        $event->startDateTime = $starTime;
-        $event->endDateTime = $endTime;
-
-        // $event->addAttendee([
-        //     'email' => $emailPaciente->email,
-        //     'name' => $emailPaciente->name,
-        // ]);
-        // $event->addAttendee([
-        //     'email' => $emailDoctor->email,
-        //     'name' =>  $emailDoctor->name,
-        // ]);
+        ]);
 
         event(new BreadDataAdded($dataType, $data));
+        // dd($dataType, $data, $emailDoctor);
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
@@ -166,11 +160,11 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 
         $data = $affected
             ? [
-                'message'    => __('voyager::generic.successfully_deleted') . " {$displayName}",
+                'message'    => __('voyager::generic.successfully_deleted')." {$displayName}",
                 'alert-type' => 'success',
             ]
             : [
-                'message'    => __('voyager::generic.error_deleting') . " {$displayName}",
+                'message'    => __('voyager::generic.error_deleting')." {$displayName}",
                 'alert-type' => 'error',
             ];
 
