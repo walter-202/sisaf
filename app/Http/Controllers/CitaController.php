@@ -98,20 +98,20 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         event(new BreadDataAdded($dataType, $data));
         dd($dataType, $data, $emailDoctor);
 
-        // if (!$request->has('_tagging')) {
-        //     if (auth()->user()->can('browse', $data)) {
-        //         $redirect = redirect()->route("voyager.{$dataType->slug}.index");
-        //     } else {
-        //         $redirect = redirect()->back();
-        //     }
+        if (!$request->has('_tagging')) {
+            if (auth()->user()->can('browse', $data)) {
+                $redirect = redirect()->route("voyager.{$dataType->slug}.index");
+            } else {
+                $redirect = redirect()->back();
+            }
 
-        //     return $redirect->with([
-        //         'message'    => __('voyager::generic.successfully_added_new') . " {$dataType->getTranslatedAttribute('display_name_singular')}",
-        //         'alert-type' => 'success',
-        //     ]);
-        // } else {
-        //     return response()->json(['success' => true, 'data' => $data]);
-        // }
+            return $redirect->with([
+                'message'    => __('voyager::generic.successfully_added_new') . " {$dataType->getTranslatedAttribute('display_name_singular')}",
+                'alert-type' => 'success',
+            ]);
+        } else {
+            return response()->json(['success' => true, 'data' => $data]);
+        }
     }
 
 
