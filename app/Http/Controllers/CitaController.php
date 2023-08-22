@@ -80,7 +80,7 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-        $emailDoctor = User::find($request->input('user_id'))->get();
+        $emailDoctor = User::find($request->input('user_id'))->get('email');
         $emailPaciente= Pacientes::find($request->input('paciente_id'))->get('email');
 
         $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
@@ -91,12 +91,12 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
             'startDateTime' => $starTime,
             'endDateTime' => $endTime,
             'addAttendee'=>$emailPaciente,
-            'addAttendee'=>$emailDoctor->email,
+            'addAttendee'=>$emailDoctor,
 
         ]);
 
         event(new BreadDataAdded($dataType, $data));
-        // dd($dataType, $data, $emailDoctor);
+        //
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
