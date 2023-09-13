@@ -80,8 +80,8 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-        $emailDoctor = User::find($request->input('user_id'))->get('email');
         $emailPaciente= Pacientes::find($request->input('paciente_id'))->get('email');
+        $emailDoctor = User::find($request->input('user_id'))->get('email');
 
         $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
         $endTime = (clone $starTime)->addMinutes($value = 15);
@@ -119,8 +119,8 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
     {
         $slug = $this->getSlug($request);
 
-        $event = Event::find($id);
-        $event->delete();
+        // $event = Event::find($id);
+        // $event->delete();
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
