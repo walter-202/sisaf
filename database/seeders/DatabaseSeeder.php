@@ -47,5 +47,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(MedicamentosTableSeeder::class);
         // $this->call(PacientesTableSeeder::class);
         $this->call(DataRowsTableSeeder::class);
+        $this->call(CitasTableSeeder::class);
     }
 }

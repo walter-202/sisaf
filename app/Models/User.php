@@ -52,4 +52,8 @@ class User extends \TCG\Voyager\Models\User implements Auditable
 {
     return $query->where('role_id', 7);
 }
+    public function role()
+{
+    return $this->belongsTo('TCG\Voyager\Models\Role');
+}
 }

@@ -179,7 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'servicios',
-                'updated_at' => '2023-08-03 00:31:43',
+                'updated_at' => '2023-10-02 00:47:57',
             ),
             9 => 
             array (
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 1,
                 'slug' => 'pacientes',
-                'updated_at' => '2023-08-20 03:02:33',
+                'updated_at' => '2023-10-01 22:23:02',
             ),
             10 => 
             array (
@@ -209,7 +209,7 @@ class DataTypesTableSeeder extends Seeder
                 'display_name_singular' => 'Administración',
                 'generate_permissions' => 1,
                 'icon' => 'voyager-eye',
-                'id' => 17,
+                'id' => 13,
                 'model_name' => 'App\\Models\\Auditoria',
                 'name' => 'audits',
                 'policy_name' => NULL,
@@ -227,13 +227,13 @@ class DataTypesTableSeeder extends Seeder
                 'display_name_singular' => 'Horario',
                 'generate_permissions' => 1,
                 'icon' => 'voyager-calendar',
-                'id' => 19,
+                'id' => 14,
                 'model_name' => 'App\\Models\\Horarios',
                 'name' => 'horarios',
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'horarios',
-                'updated_at' => '2023-08-12 22:31:18',
+                'updated_at' => '2023-08-21 22:22:32',
             ),
             12 => 
             array (
@@ -245,13 +245,13 @@ class DataTypesTableSeeder extends Seeder
                 'display_name_singular' => 'Cita',
                 'generate_permissions' => 1,
                 'icon' => 'voyager-ticket',
-                'id' => 20,
+                'id' => 15,
                 'model_name' => 'App\\Models\\Cita',
                 'name' => 'citas',
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'citas',
-                'updated_at' => '2023-08-21 20:57:05',
+                'updated_at' => '2023-10-01 22:27:55',
             ),
         ));
         

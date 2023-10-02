@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('servicio_id')->constrained();
+            $table->string('motivo');
             $table->date('date');
             $table->time('time');
-            $table->string('motivo');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('paciente_id')->constrained();
             $table->timestamps();

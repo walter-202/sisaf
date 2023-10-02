@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id();
-            $table->string('days');
-            $table->string('active');
-            $table->string('morning_start');
-            $table->string('morning_end');
-            $table->string('afternoon_start');
-            $table->string('afternoon_end');
-            $table->string('user_id');
+            $table->string('day')->unique();
+            $table->time('from');
+            $table->time('to');
+            $table->unsignedInteger('step')->default(60);
+            $table->boolean('off')->default(false);
+            $table->foreignId('servicio_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
