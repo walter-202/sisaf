@@ -91,14 +91,14 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $CalendarEvent->name = $request->input('motivo');
         $CalendarEvent->startDateTime =$starTime;
         $CalendarEvent->endDateTime = $endTime;
-        $CalendarEvent->addAttendee([
-            'name'  => $Doctor->name ,
-            'email' => $Doctor->email,
-        ]);
-        $CalendarEvent->addAttendee([
-            'name'  => $Paciente->name,
-            'email' => $Paciente->email,
-        ]);
+        // $CalendarEvent->addAttendee([
+        //     'name'  => $Doctor->name ,
+        //     'email' => $Doctor->email,
+        // ]);
+        // $CalendarEvent->addAttendee([
+        //     'name'  => $Paciente->name,
+        //     'email' => $Paciente->email,
+        // ]);
         $CalendarEvent->save();
 
         event(new BreadDataAdded($dataType, $data));
