@@ -80,20 +80,26 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-        $emailPaciente= Pacientes::find($request->input('paciente_id'))->get('email');
-        $emailDoctor = User::find($request->input('user_id'))->get('email');
+        $Paciente= Pacientes::select('name', 'email')->find($request->input('paciente_id'));
+        $Doctor = User::select('name', 'email')->find($request->input('user_id'));
 
         $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
         $endTime = (clone $starTime)->addMinutes($value = 15);
 
-        Event::create([
-            'name' => $request->input('motivo'),
-            'startDateTime' => $starTime,
-            'endDateTime' => $endTime,
-            'addAttendee'=>$emailPaciente,
-            'addAttendee'=>$emailDoctor,
+        $CalendarEvent = new Event();
 
+        $CalendarEvent->name = $request->input('motivo');
+        $CalendarEvent->startDateTime =$starTime;
+        $CalendarEvent->endDateTime = $endTime;
+        $CalendarEvent->addAttendee([
+            'name'  => $Doctor->name ,
+            'email' => $Doctor->email,
         ]);
+        $CalendarEvent->addAttendee([
+            'name'  => $Paciente->name,
+            'email' => $Paciente->email,
+        ]);
+        $CalendarEvent->save();
 
         event(new BreadDataAdded($dataType, $data));
         //
