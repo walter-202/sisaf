@@ -13,6 +13,7 @@ class Horarios extends Model implements Auditable
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
 
+    public $allow_export_all = true;
 
 
 }

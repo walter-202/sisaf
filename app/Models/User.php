@@ -22,6 +22,8 @@ class User extends \TCG\Voyager\Models\User implements Auditable
      *
      * @var array<int, string>
      */
+    public $allow_export_all = true;
+
     protected $fillable = [
 
         'name',

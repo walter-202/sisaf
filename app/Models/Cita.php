@@ -14,6 +14,7 @@ class Cita extends Model implements Auditable
     protected $casts = [
         'time' => 'datetime:H:i'
     ];
+    public $allow_export_all = true;
 
     protected $guarded = [];
 
