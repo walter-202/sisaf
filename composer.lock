@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44d4ad12668083d1a58e047cdc8b0bea",
+    "content-hash": "6b2c8807b02d4c38ded5d036d981f863",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -7288,65 +7288,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.6"
             },
             "time": "2023-01-03T09:29:04+00:00"
-        },
-        {
-            "name": "tu6ge/voyager-excel",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tu6ge/voyager-excel.git",
-                "reference": "aaa4d6b76cbf827e3cea2fae58a92f2c5df53987"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tu6ge/voyager-excel/zipball/aaa4d6b76cbf827e3cea2fae58a92f2c5df53987",
-                "reference": "aaa4d6b76cbf827e3cea2fae58a92f2c5df53987",
-                "shasum": ""
-            },
-            "require": {
-                "maatwebsite/excel": "^3.1"
-            },
-            "require-dev": {
-                "laravel/browser-kit-testing": ">=5.0",
-                "orchestra/testbench-browser-kit": ">=4.0",
-                "phpunit/phpunit": ">=8.0",
-                "tcg/voyager": "^1.4"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Tu6ge\\VoyagerExcel\\VoyagerExcelServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Tu6ge\\VoyagerExcel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "tu6ge",
-                    "email": "772364230@qq.com"
-                }
-            ],
-            "description": "voyager excel export hook",
-            "support": {
-                "issues": "https://github.com/tu6ge/voyager-excel/issues",
-                "source": "https://github.com/tu6ge/voyager-excel/tree/v2.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://www.patreon.com/tu6ge",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-08-31T02:40:56+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

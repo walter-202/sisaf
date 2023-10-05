@@ -6,14 +6,14 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Excel\Facades\Excel;
 use TCG\Voyager\Actions\AbstractAction;
-use Tu6ge\VoyagerExcel\Exports\AbstractExport;
-use Tu6ge\VoyagerExcel\Exports\BaseExport;
+use App\VoyagerExcel\Exports\AbstractExport;
+use App\VoyagerExcel\Exports\BaseExport;
 
 class Export extends AbstractAction
 {
     public function getTitle()
     {
-        return __('Prueba');
+        return __('excel.export_excel');
     }
 
     public function getIcon()
