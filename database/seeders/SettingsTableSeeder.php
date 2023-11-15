@@ -105,7 +105,7 @@ class SettingsTableSeeder extends Seeder
                 'key' => 'admin.loader',
                 'order' => 2,
                 'type' => 'image',
-                'value' => 'settings\\October2023\\2BDtN3xx6rvxgN2E6vx8.gif',
+                'value' => 'settings\\November2023\\QCmjt6lizr3VjXX3F1sm.gif',
             ),
             8 => 
             array (

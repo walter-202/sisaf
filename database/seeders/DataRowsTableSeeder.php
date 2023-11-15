@@ -102,7 +102,7 @@ class DataRowsTableSeeder extends Seeder
             5 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 1,
                 'delete' => 0,
                 'details' => '{}',
@@ -127,7 +127,7 @@ class DataRowsTableSeeder extends Seeder
                 'field' => 'updated_at',
                 'id' => 7,
                 'order' => 7,
-                'read' => 0,
+                'read' => 1,
                 'required' => 0,
                 'type' => 'timestamp',
             ),
@@ -170,7 +170,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 1,
                 'delete' => 0,
                 'details' => '{}',
-                'display_name' => 'Settings',
+                'display_name' => 'Ajustes',
                 'edit' => 0,
                 'field' => 'settings',
                 'id' => 10,
@@ -249,7 +249,7 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 0,
                 'data_type_id' => 3,
                 'delete' => 0,
-                'details' => NULL,
+                'details' => '{}',
                 'display_name' => 'ID',
                 'edit' => 0,
                 'field' => 'id',
@@ -265,7 +265,7 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 1,
                 'data_type_id' => 3,
                 'delete' => 1,
-                'details' => NULL,
+                'details' => '{}',
                 'display_name' => 'Nombre',
                 'edit' => 1,
                 'field' => 'name',
@@ -281,13 +281,13 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 0,
                 'data_type_id' => 3,
                 'delete' => 0,
-                'details' => NULL,
+                'details' => '{}',
                 'display_name' => 'Creado',
                 'edit' => 0,
                 'field' => 'created_at',
                 'id' => 17,
                 'order' => 3,
-                'read' => 0,
+                'read' => 1,
                 'required' => 0,
                 'type' => 'timestamp',
             ),
@@ -297,13 +297,13 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 0,
                 'data_type_id' => 3,
                 'delete' => 0,
-                'details' => NULL,
+                'details' => '{}',
                 'display_name' => 'Actualizado',
                 'edit' => 0,
                 'field' => 'updated_at',
                 'id' => 18,
                 'order' => 4,
-                'read' => 0,
+                'read' => 1,
                 'required' => 0,
                 'type' => 'timestamp',
             ),
@@ -313,7 +313,7 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 1,
                 'data_type_id' => 3,
                 'delete' => 1,
-                'details' => NULL,
+                'details' => '{}',
                 'display_name' => 'Nombre a Mostrar',
                 'edit' => 1,
                 'field' => 'display_name',
@@ -746,7 +746,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 12,
                 'delete' => 1,
                 'details' => '{}',
-                'display_name' => 'Name',
+                'display_name' => 'Nombre',
                 'edit' => 1,
                 'field' => 'name',
                 'id' => 46,
@@ -762,7 +762,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 12,
                 'delete' => 1,
                 'details' => '{}',
-                'display_name' => 'Last Name',
+                'display_name' => 'Apellidos',
                 'edit' => 1,
                 'field' => 'last_name',
                 'id' => 47,
@@ -790,7 +790,7 @@ class DataRowsTableSeeder extends Seeder
             48 => 
             array (
                 'add' => 1,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 12,
                 'delete' => 1,
                 'details' => '{}',
@@ -806,7 +806,7 @@ class DataRowsTableSeeder extends Seeder
             49 => 
             array (
                 'add' => 1,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 12,
                 'delete' => 1,
                 'details' => '{}',
@@ -822,7 +822,7 @@ class DataRowsTableSeeder extends Seeder
             50 => 
             array (
                 'add' => 1,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 12,
                 'delete' => 1,
                 'details' => '{}',
@@ -858,7 +858,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 12,
                 'delete' => 0,
                 'details' => '{}',
-                'display_name' => 'Created At',
+                'display_name' => 'Creado el',
                 'edit' => 0,
                 'field' => 'created_at',
                 'id' => 53,
@@ -874,7 +874,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 12,
                 'delete' => 0,
                 'details' => '{}',
-                'display_name' => 'Updated At',
+                'display_name' => 'Actualizado el',
                 'edit' => 0,
                 'field' => 'updated_at',
                 'id' => 54,
@@ -890,7 +890,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 12,
                 'delete' => 0,
                 'details' => '{}',
-                'display_name' => 'Deleted At',
+                'display_name' => 'Eliminado el',
                 'edit' => 0,
                 'field' => 'deleted_at',
                 'id' => 55,
@@ -901,13 +901,13 @@ class DataRowsTableSeeder extends Seeder
             ),
             55 => 
             array (
-                'add' => 1,
-                'browse' => 1,
+                'add' => 0,
+                'browse' => 0,
                 'data_type_id' => 1,
-                'delete' => 1,
+                'delete' => 0,
                 'details' => '{}',
-                'display_name' => 'Email Verified At',
-                'edit' => 1,
+                'display_name' => 'Email Verificado',
+                'edit' => 0,
                 'field' => 'email_verified_at',
                 'id' => 56,
                 'order' => 6,
@@ -918,11 +918,11 @@ class DataRowsTableSeeder extends Seeder
             56 => 
             array (
                 'add' => 1,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'display_name' => 'Deleted At',
+                'display_name' => 'Eliminado',
                 'edit' => 1,
                 'field' => 'deleted_at',
                 'id' => 57,
@@ -1173,120 +1173,8 @@ class DataRowsTableSeeder extends Seeder
             ),
             72 => 
             array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Days',
-                'edit' => 1,
-                'field' => 'days',
-                'id' => 73,
-                'order' => 2,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'text',
-            ),
-            73 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Active',
-                'edit' => 1,
-                'field' => 'active',
-                'id' => 74,
-                'order' => 3,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'text',
-            ),
-            74 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Morning Start',
-                'edit' => 1,
-                'field' => 'morning_start',
-                'id' => 75,
-                'order' => 4,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'time',
-            ),
-            75 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Morning End',
-                'edit' => 1,
-                'field' => 'morning_end',
-                'id' => 76,
-                'order' => 5,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'time',
-            ),
-            76 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Afternoon Start',
-                'edit' => 1,
-                'field' => 'afternoon_start',
-                'id' => 77,
-                'order' => 6,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'time',
-            ),
-            77 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Afternoon End',
-                'edit' => 1,
-                'field' => 'afternoon_end',
-                'id' => 78,
-                'order' => 7,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'time',
-            ),
-            78 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 14,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'User Id',
-                'edit' => 1,
-                'field' => 'user_id',
-                'id' => 79,
-                'order' => 8,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'text',
-            ),
-            79 => 
-            array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 14,
                 'delete' => 0,
                 'details' => '{}',
@@ -1299,10 +1187,10 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            80 => 
+            73 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 14,
                 'delete' => 0,
                 'details' => '{}',
@@ -1315,10 +1203,10 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            81 => 
+            74 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 14,
                 'delete' => 0,
                 'details' => '{}',
@@ -1331,7 +1219,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            82 => 
+            75 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -1347,7 +1235,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            83 => 
+            76 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1363,7 +1251,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            84 => 
+            77 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -1379,7 +1267,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            85 => 
+            78 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -1395,7 +1283,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            86 => 
+            79 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -1411,7 +1299,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            87 => 
+            80 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1422,12 +1310,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'user_id',
                 'id' => 88,
-                'order' => 3,
+                'order' => 5,
                 'read' => 1,
                 'required' => 1,
                 'type' => 'text',
             ),
-            88 => 
+            81 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1438,31 +1326,31 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'date',
                 'id' => 89,
-                'order' => 5,
+                'order' => 9,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'date',
+                'type' => 'timestamp',
             ),
-            89 => 
+            82 => 
             array (
                 'add' => 1,
                 'browse' => 1,
                 'data_type_id' => 15,
                 'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Tiempo',
+                'details' => '{"options":{"09:00":"\'09:00","10:00":"10:00"}}',
+                'display_name' => 'Dia {Lunes} 09/10/2023',
                 'edit' => 1,
                 'field' => 'time',
                 'id' => 90,
-                'order' => 6,
+                'order' => 10,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'time',
+                'type' => 'radio_btn',
             ),
-            90 => 
+            83 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 15,
                 'delete' => 0,
                 'details' => '{}',
@@ -1470,15 +1358,15 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 0,
                 'field' => 'created_at',
                 'id' => 91,
-                'order' => 8,
+                'order' => 11,
                 'read' => 1,
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            91 => 
+            84 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 15,
                 'delete' => 0,
                 'details' => '{}',
@@ -1486,12 +1374,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 0,
                 'field' => 'updated_at',
                 'id' => 92,
-                'order' => 9,
+                'order' => 12,
                 'read' => 1,
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            92 => 
+            85 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1502,12 +1390,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'cita_belongsto_user_relationship',
                 'id' => 93,
-                'order' => 10,
+                'order' => 6,
                 'read' => 1,
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            93 => 
+            86 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1518,12 +1406,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'cita_hasone_paciente_relationship',
                 'id' => 94,
-                'order' => 11,
+                'order' => 8,
                 'read' => 1,
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            94 => 
+            87 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1534,12 +1422,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'cita_hasone_servicio_relationship',
                 'id' => 95,
-                'order' => 12,
+                'order' => 4,
                 'read' => 1,
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            95 => 
+            88 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1550,12 +1438,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'field' => 'servicio_id',
                 'id' => 96,
-                'order' => 4,
+                'order' => 3,
                 'read' => 1,
                 'required' => 1,
                 'type' => 'text',
             ),
-            96 => 
+            89 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1571,7 +1459,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            97 => 
+            90 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -1586,6 +1474,134 @@ class DataRowsTableSeeder extends Seeder
                 'read' => 1,
                 'required' => 1,
                 'type' => 'text',
+            ),
+            91 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{"default":"Lunes","options":{"Lunes":"Lunes","Martes":"Martes","Miercoles":"Miercole","Jueves":"Jueves","Viernes":"Viernes","Sabado":"S\\u00e1bado","Domingo":"Domingo"}}',
+                'display_name' => 'Día',
+                'edit' => 1,
+                'field' => 'day',
+                'id' => 99,
+                'order' => 4,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'select_dropdown',
+            ),
+            92 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Desde',
+                'edit' => 1,
+                'field' => 'from',
+                'id' => 100,
+                'order' => 5,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'time',
+            ),
+            93 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Hasta',
+                'edit' => 1,
+                'field' => 'to',
+                'id' => 101,
+                'order' => 6,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'time',
+            ),
+            94 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":["required","min:1","max:3"],"messages":{"required":"This :attribute field is a must.","max":"This :attribute field maximum :max."}}}',
+                'display_name' => 'Intervalo',
+                'edit' => 1,
+                'field' => 'step',
+                'id' => 102,
+                'order' => 7,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'number',
+            ),
+            95 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{"on":"Activado","off":"Desactivado","checked":false}',
+                'display_name' => 'Desactivar',
+                'edit' => 1,
+                'field' => 'off',
+                'id' => 103,
+                'order' => 8,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'checkbox',
+            ),
+            96 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Servicio Id',
+                'edit' => 1,
+                'field' => 'servicio_id',
+                'id' => 104,
+                'order' => 3,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'text',
+            ),
+            97 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 14,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Models\\\\Servicios","table":"servicios","type":"belongsTo","column":"servicio_id","key":"id","label":"name","pivot_table":"audits","pivot":"0","taggable":"0"}',
+                'display_name' => 'Servicio',
+                'edit' => 1,
+                'field' => 'horario_belongsto_servicio_relationship',
+                'id' => 105,
+                'order' => 2,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'relationship',
+            ),
+            98 => 
+            array (
+                'add' => 0,
+                'browse' => 0,
+                'data_type_id' => 3,
+                'delete' => 0,
+                'details' => '{}',
+                'display_name' => 'Deleted At',
+                'edit' => 0,
+                'field' => 'deleted_at',
+                'id' => 106,
+                'order' => 6,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'timestamp',
             ),
         ));
         

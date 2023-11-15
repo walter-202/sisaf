@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('historials', function (Blueprint $table) {
+        Schema::create('historia', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

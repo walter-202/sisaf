@@ -53,18 +53,18 @@ class MenuItemsTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'color' => NULL,
+                'color' => '#000000',
                 'created_at' => '2023-07-08 02:00:55',
                 'icon_class' => 'voyager-person',
                 'id' => 3,
                 'menu_id' => 1,
                 'order' => 4,
-                'parameters' => NULL,
+                'parameters' => 'null',
                 'parent_id' => NULL,
-                'route' => 'voyager.users.index',
+                'route' => 'voyager.usuarios.index',
                 'target' => '_self',
                 'title' => 'Usuarios',
-                'updated_at' => '2023-08-21 02:48:28',
+                'updated_at' => '2023-11-09 19:37:13',
                 'url' => '',
             ),
             3 => 

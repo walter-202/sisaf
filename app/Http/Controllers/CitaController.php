@@ -91,6 +91,9 @@ class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $CalendarEvent->name = $request->input('motivo');
         $CalendarEvent->startDateTime =$starTime;
         $CalendarEvent->endDateTime = $endTime;
+
+// Envio de mails mediante Google Calendar
+
         // $CalendarEvent->addAttendee([
         //     'name'  => $Doctor->name ,
         //     'email' => $Doctor->email,

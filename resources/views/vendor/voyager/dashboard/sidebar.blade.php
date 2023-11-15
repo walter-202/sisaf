@@ -3,7 +3,7 @@
         <div class="side-menu-container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ route('voyager.dashboard') }}">
-                    <div class="logo-icon-container">
+                    <div class="logo-icon-container ">
                         <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
                         @if($admin_logo_img == '')
                             <img src="{{ voyager_asset('images/logo-icon-light.png') }}" alt="Icono">

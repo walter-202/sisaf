@@ -44,10 +44,10 @@ class UsersTableSeeder extends Seeder
                 'id' => 2,
                 'name' => 'Walter Aguilar',
                 'password' => '$2y$10$Hm8ZZR5G7fMSfo0dTtlhKuiFQy4RPb67d41QtMeX.pbR9BCLm1WfK',
-                'remember_token' => 'otcfqYwW0j1vdOmpR5PKij6x7TGvYLLRwU2k0LiMSesQSDfMjnWNaWNHMLj6',
+                'remember_token' => 'E2fdbGWLJQ2t39tvfizZP3XZLJNPQQUbdEej9cVLcfLumChmzQH7KNl5nelI',
                 'role_id' => 4,
                 'settings' => '{"locale":"es"}',
-                'updated_at' => '2023-07-07 20:10:45',
+                'updated_at' => '2023-11-09 19:20:20',
             ),
             2 => 
             array (

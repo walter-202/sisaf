@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-content">
         @include('voyager::alerts')
-        {{-- @include('voyager::dimmers') --}}
+        @include('voyager::dimmers')
         <div class="analytics-container">
             <?php $google_analytics_client_id = Voyager::setting("admin.google_analytics_client_id"); ?>
             @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
@@ -17,7 +17,7 @@
                 </p>
             @endif
 
-            <div class="Dashboard Dashboard--full" id="analytics-dashboard">
+            {{-- <div class="Dashboard Dashboard--full" id="analytics-dashboard">
                 <header class="Dashboard-header">
                     <ul class="FlexGrid">
                         <li class="FlexGrid-item">
@@ -75,7 +75,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
 
         <iframe class="Dashboard Dashboard--full" src="https://calendar.google.com/calendar/embed?src=001aa0eb0efc11defbe017a1bd125149428469f8e7c0500cb7f7c7419bb3c5ec%40group.calendar.google.com&ctz=America%2FLa_Paz" style="border: 0" width="100%" height="640px" frameborder="0" scrolling="no"></iframe>
