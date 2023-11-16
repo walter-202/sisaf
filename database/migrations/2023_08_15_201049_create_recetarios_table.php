@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('seguimientos', function (Blueprint $table) {
+        Schema::create('recetarios', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('precio');
+            $table->text('receta');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seguimientos');
+        Schema::dropIfExists('recetarios');
     }
 };
