@@ -13,4 +13,12 @@ class Historia extends Model implements Auditable
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
 
+    protected $fillable = [
+        'motivo' ,
+        'enfermedad',
+        'diagnostico',
+        'conducta',
+        'tratamiento',
+        'citas_id',
+    ];
 }
