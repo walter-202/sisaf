@@ -21,7 +21,7 @@ class DataTypesTableSeeder extends Seeder
         \DB::table('data_types')->insert(array (
             0 => 
             array (
-                'controller' => 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController',
+                'controller' => 'App\\Http\\Controllers\\UserController',
                 'created_at' => '2023-07-14 15:13:44',
                 'description' => NULL,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
@@ -35,7 +35,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => 'TCG\\Voyager\\Policies\\UserPolicy',
                 'server_side' => 0,
                 'slug' => 'users',
-                'updated_at' => '2023-08-14 11:07:19',
+                'updated_at' => '2023-11-24 18:38:29',
             ),
             1 => 
             array (

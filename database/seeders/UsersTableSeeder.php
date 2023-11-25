@@ -79,6 +79,36 @@ class UsersTableSeeder extends Seeder
                 'settings' => '{"locale":"es"}',
                 'updated_at' => '2023-11-15 21:15:11',
             ),
+            4 => 
+            array (
+                'avatar' => 'users/default.png',
+                'created_at' => '2023-11-24 19:00:12',
+                'deleted_at' => NULL,
+                'email' => 'osorio123@gmail.com',
+                'email_verified_at' => NULL,
+                'id' => 5,
+                'name' => 'Dr Osorio',
+                'password' => '$2y$10$BFEyvg8H3s0MbuVWbs2unu.oSz/B6nFT.T5UfOrCBrtm0ByYnYeuW',
+                'remember_token' => NULL,
+                'role_id' => 6,
+                'settings' => '{"locale":"es"}',
+                'updated_at' => '2023-11-24 19:02:33',
+            ),
+            5 => 
+            array (
+                'avatar' => 'users/default.png',
+                'created_at' => '2023-11-24 19:03:28',
+                'deleted_at' => NULL,
+                'email' => 'guadalupe33@gmail.com',
+                'email_verified_at' => NULL,
+                'id' => 6,
+                'name' => 'Enfermera Guadalupe',
+                'password' => '$2y$10$8ZpSWlurgR1XDb7T3ZSOn.CPsw6wvwyqpr92H8M9SxPEz2w/wpCye',
+                'remember_token' => NULL,
+                'role_id' => 3,
+                'settings' => NULL,
+                'updated_at' => '2023-11-24 19:03:28',
+            ),
         ));
         
         
