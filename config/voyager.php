@@ -12,7 +12,7 @@ return [
 
     'user' => [
         'add_default_role_on_register' => true,
-        'default_role'                 => 'user',
+        'default_role'                 => 'recepcion',
         'default_avatar'               => 'users/default.png',
         'redirect'                     => '/admin',
     ],
@@ -181,17 +181,17 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'voyager.primary_color' => '#22A7F0',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        'css/app.css',
+        // '/css/app.css'
     ],
 
     'additional_js' => [
-        'js/app.js',
+        // 'app.js',
     ],
 
     'googlemaps' => [
