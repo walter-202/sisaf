@@ -29,12 +29,12 @@ class MedicamentoDimmer extends BaseDimmer
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-group',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('dimmer.medicamento_link_text'),
+                'text' => __('dimmer.user_link_text',['string' => Str::lower($string)]),
                 'link' => route('voyager.medicamentos.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
+            'image' => asset('storage/settings/July2023/UFC90JuIt3w8E4NSPBDh.jpg'),
         ]));
     }
 

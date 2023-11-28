@@ -27,7 +27,7 @@ return [
     */
 
     'controllers' => [
-        'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+        'namespace' => 'App\\Http\\Controllers\\Voyager',
     ],
 
     /*
@@ -144,7 +144,12 @@ return [
 
         'widgets' => [
             'App\\Widgets\\UserDimmer',
+            'App\\Widgets\\PacientesDimmer',
             'App\\Widgets\\MedicamentoDimmer',
+            'App\\Widgets\\MaterialesDimmer',
+            'App\\Widgets\\ServiciosDimmer',
+            'App\\Widgets\\CitasDimmer',
+            // 'App\\Widgets\\MedicamentoDimmer',
         ],
 
     ],
@@ -181,17 +186,17 @@ return [
     |
     */
 
-    'voyager.primary_color' => '#22A7F0',
+    'voyager.primary_color' => '#ff7cf2',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        // '/css/app.css'
+        // 'css/app.css'
     ],
 
     'additional_js' => [
-        // 'app.js',
+        // 'js/app.js',
     ],
 
     'googlemaps' => [
