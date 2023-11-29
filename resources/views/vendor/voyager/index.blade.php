@@ -13,7 +13,7 @@
                 <p style="border-radius:4px; padding:20px; background:#fff; margin:0; color:#999; text-align:center;">
                     {{-- {!! __('voyager::analytics.no_client_id') !!}
                     <a href="https://console.developers.google.com" target="_blank">https://console.developers.google.com</a> --}}
-                    Panel
+                    Panel Administrativo
                 </p>
             @endif
 

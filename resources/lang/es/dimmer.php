@@ -11,4 +11,6 @@ return [
     'user'           => 'Usuario|Usuarios',
     'user_link_text' => 'Ver todos los :string',
     'user_text'      => 'Tiene :count :string en su base de datos. Haga clic en el botón de abajo para ver todos los :string.',
+    'cita_link_text' => 'Ver todas las :string',
+    'cita_text'      => 'Tiene :count :string en su base de datos. Haga clic en el botón de abajo para ver todas las :string.',
 ];
