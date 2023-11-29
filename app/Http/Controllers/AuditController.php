@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Auditoria;
-use App\Models\Medicamentos;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use OwenIt\Auditing\Contracts\Audit;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
