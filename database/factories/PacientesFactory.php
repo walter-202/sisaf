@@ -25,9 +25,11 @@ class PacientesFactory extends Factory
         return [
             'name' => fake()->name(),
             'last_name' => fake()->lastName(),
+            'last_name_m' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'sexo' => $arrayValues[rand(0,1)],
-            'direccion' => fake()->streetAddress(),
+            'direccion' => fake()->address(),
+            'barrio' => fake()->streetAddress(),
             'fecha_de_nacimiento' => fake()->date('Y-m-d ','now'),
             'ciudad'=> $cities[rand(0,2)],
         ];

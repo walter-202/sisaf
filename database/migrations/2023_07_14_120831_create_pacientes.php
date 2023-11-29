@@ -17,11 +17,19 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->string('last_name_m')->nullable();
+            $table->string('last_name_c')->nullable();
             $table->string('email')->unique();
             $table->string('direccion');
             $table->string('sexo');
             $table->string('fecha_de_nacimiento');
-            $table->string('ciudad');
+            $table->string('ciudad')->nullable();
+            $table->string('barrio')->nullable();
+            $table->string('ocupacion')->nullable();
+            $table->string('grado')->nullable();
+            $table->integer('edad')->nullable();
+            $table->string('referido')->nullable();
+            $table->string('familiar')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
