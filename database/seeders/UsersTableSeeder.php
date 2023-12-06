@@ -72,12 +72,12 @@ class UsersTableSeeder extends Seeder
                 'email' => 'mvargaskari@gmail.com',
                 'email_verified_at' => NULL,
                 'id' => 4,
-                'name' => 'testing',
+                'name' => 'testing3',
                 'password' => '$2y$10$3YtP9CBw7biiTPQW7IExO.ErrYFaikGxdtnZK4ob5d.t6IsuY1uk.',
                 'remember_token' => NULL,
                 'role_id' => 5,
                 'settings' => '{"locale":"es"}',
-                'updated_at' => '2023-11-15 21:15:11',
+                'updated_at' => '2023-12-05 21:03:08',
             ),
             4 => 
             array (
