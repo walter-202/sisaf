@@ -31,20 +31,5 @@ class DatabaseSeeder extends Seeder
             ServiciosTableSeeder::class,
             AuditsTableSeeder::class,
         ]);
-        $this->call(DataRowsTableSeeder::class);
-        $this->call(CitasTableSeeder::class);
-        $this->call(DataTypesTableSeeder::class);
-        $this->call(MenusTableSeeder::class);
-        $this->call(MenuItemsTableSeeder::class);
-        $this->call(SettingsTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
-        $this->call(UserRolesTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
-        $this->call(PermissionsTableSeeder::class);
-        $this->call(PermissionRoleTableSeeder::class);
-        $this->call(AuditsTableSeeder::class);
-        $this->call(MaterialesTableSeeder::class);
-        $this->call(MedicamentosTableSeeder::class);
-        $this->call(PacientesTableSeeder::class);
     }
 }
