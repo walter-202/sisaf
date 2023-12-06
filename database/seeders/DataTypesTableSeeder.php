@@ -161,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'medicamentos',
-                'updated_at' => '2023-08-03 00:30:40',
+                'updated_at' => '2023-12-05 21:39:54',
             ),
             8 => 
             array (
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 1,
                 'slug' => 'pacientes',
-                'updated_at' => '2023-11-28 22:14:54',
+                'updated_at' => '2023-12-05 21:41:09',
             ),
             10 => 
             array (
