@@ -33,5 +33,9 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(DataRowsTableSeeder::class);
         $this->call(CitasTableSeeder::class);
+        $this->call(DataTypesTableSeeder::class);
+        $this->call(MenusTableSeeder::class);
+        $this->call(MenuItemsTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

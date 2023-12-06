@@ -35,7 +35,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => 'TCG\\Voyager\\Policies\\UserPolicy',
                 'server_side' => 0,
                 'slug' => 'users',
-                'updated_at' => '2023-11-28 22:12:35',
+                'updated_at' => '2023-12-05 20:43:55',
             ),
             1 => 
             array (
