@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('celular')->nullable();
             $table->string('direccion');
             $table->string('sexo');
-            $table->date('fecha_de_nacimiento');
+            $table->string('fecha_de_nacimiento');
             $table->string('ciudad')->nullable();
             $table->string('barrio')->nullable();
             $table->string('ocupacion')->nullable();

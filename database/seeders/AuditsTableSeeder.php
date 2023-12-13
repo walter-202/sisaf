@@ -649,6 +649,42 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-09 21:05:59',
                 'deleted_at' => NULL,
             ),
+            35 => 
+            array (
+                'id' => 36,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\Pacientes',
+                'auditable_id' => 3,
+                'old_values' => '{"tipo_documento":"Carnet de Identidad","celular":"7","sexo":"Femenino","fecha_de_nacimiento":"2001-07-12 18:59:43"}',
+                'new_values' => '{"tipo_documento":"radio1","celular":"79125100","sexo":"radio1","fecha_de_nacimiento":"2001-07-12T04:00:00.000000Z"}',
+                'url' => 'https://sisaf.test/admin/pacientes/3',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2023-12-11 23:22:41',
+                'updated_at' => '2023-12-11 23:22:41',
+                'deleted_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\Pacientes',
+                'auditable_id' => 8,
+                'old_values' => '{"tipo_documento":"Carnet de Identidad","direccion":"Carrer Biel, 891, 1\\u00ba, 49049, Os Delr\\u00edo","sexo":"Masculino","fecha_de_nacimiento":"14-12-1970 ","barrio":"Carrer Armijo, 7, Bajo 5\\u00ba"}',
+                'new_values' => '{"tipo_documento":"radio1","direccion":"Carrer Biel","sexo":"radio1","fecha_de_nacimiento":"1970-12-15T04:00:00.000000Z","barrio":"Carrer Armijo"}',
+                'url' => 'https://sisaf.test/admin/pacientes/8',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2023-12-11 23:36:19',
+                'updated_at' => '2023-12-11 23:36:19',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

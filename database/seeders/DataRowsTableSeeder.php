@@ -735,7 +735,7 @@ class DataRowsTableSeeder extends Seeder
                 'read' => 0,
                 'edit' => 0,
                 'add' => 0,
-                'delete' => 0,
+                'delete' => 1,
                 'details' => '{}',
                 'order' => 1,
             ),
@@ -753,7 +753,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 2,
+                'order' => 4,
             ),
             46 => 
             array (
@@ -769,7 +769,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 3,
+                'order' => 5,
             ),
             47 => 
             array (
@@ -785,7 +785,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:5","unique:pacientes,email","regex:\\/^[a-zA-Z0-9._-]{3,20}+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$\\/"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo.","unique":"El :attribute debe ser \\u00fanico. Este :attribute ya existe en la base de datos.","regex":"El :attribute ser v\\u00e1lido."}}}',
-                'order' => 6,
+                'order' => 8,
             ),
             48 => 
             array (
@@ -801,7 +801,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:2"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 8,
+                'order' => 10,
             ),
             49 => 
             array (
@@ -811,20 +811,20 @@ class DataRowsTableSeeder extends Seeder
                 'type' => 'radio_btn',
                 'display_name' => 'Sexo',
                 'required' => 1,
-                'browse' => 1,
+                'browse' => 0,
                 'read' => 1,
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"options":{"radio1":"Masculino","radio2":"Femenino"},"validation":{"rule":["required","min:2"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 10,
+                'details' => '{"default":"radio1","options":{"Masculino":"Masculino","Femenino":"Femenino"},"validation":{"rule":["required"],"messages":{"required":"El :attribute es obligatorio."}}}',
+                'order' => 13,
             ),
             50 => 
             array (
                 'id' => 51,
                 'data_type_id' => 10,
                 'field' => 'fecha_de_nacimiento',
-                'type' => 'text',
+                'type' => 'date',
                 'display_name' => 'Fecha De Nacimiento',
                 'required' => 1,
                 'browse' => 0,
@@ -833,7 +833,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required"],"messages":{"required":"El :attribute es obligatorio."}}}',
-                'order' => 11,
+                'order' => 14,
             ),
             51 => 
             array (
@@ -849,7 +849,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:2"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 7,
+                'order' => 9,
             ),
             52 => 
             array (
@@ -865,7 +865,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 17,
+                'order' => 20,
             ),
             53 => 
             array (
@@ -881,7 +881,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 18,
+                'order' => 21,
             ),
             54 => 
             array (
@@ -897,7 +897,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 19,
+                'order' => 22,
             ),
             55 => 
             array (
@@ -1320,7 +1320,7 @@ class DataRowsTableSeeder extends Seeder
                 'id' => 82,
                 'data_type_id' => 13,
                 'field' => 'date',
-                'type' => 'timestamp',
+                'type' => 'date',
                 'display_name' => 'Día',
                 'required' => 1,
                 'browse' => 1,
@@ -1665,7 +1665,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 4,
+                'order' => 6,
             ),
             103 => 
             array (
@@ -1680,8 +1680,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 5,
+                'details' => '{"validation":{"rule":["min:3","nullable"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 7,
             ),
             104 => 
             array (
@@ -1696,8 +1696,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 9,
+                'details' => '{"validation":{"rule":["nullable","min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 11,
             ),
             105 => 
             array (
@@ -1712,8 +1712,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 12,
+                'details' => '{"validation":{"rule":["nullable","min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 15,
             ),
             106 => 
             array (
@@ -1728,8 +1728,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 13,
+                'details' => '{"validation":{"rule":["nullable","min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 16,
             ),
             107 => 
             array (
@@ -1744,8 +1744,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 14,
+                'details' => '{"validation":{"rule":["required","min:1","max:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo.","max":"El :attribute debe tener :max caracteres como m\\u00e1ximo."}}}',
+                'order' => 17,
             ),
             108 => 
             array (
@@ -1760,8 +1760,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 15,
+                'details' => '{"validation":{"rule":["nullable","min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 18,
             ),
             109 => 
             array (
@@ -1776,8 +1776,56 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":["required","min:3"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
-                'order' => 16,
+                'details' => '{"validation":{"rule":["nullable","min:3"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 19,
+            ),
+            110 => 
+            array (
+                'id' => 111,
+                'data_type_id' => 10,
+                'field' => 'documento',
+                'type' => 'text',
+                'display_name' => 'Documento',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":["required","min:5","max:15"],"messages":{"required":"El :attribute es obligatorio.","min":"El :attribute debe tener :min caracteres como m\\u00ednimo.","max":"El :attribute debe tener :min caracteres como m\\u00ednimo."}}}',
+                'order' => 2,
+            ),
+            111 => 
+            array (
+                'id' => 112,
+                'data_type_id' => 10,
+                'field' => 'tipo_documento',
+                'type' => 'radio_btn',
+                'display_name' => 'Tipo de Documento',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"default":"radio1","options":{"Carnet de Identidad":"Carnet de Identidad","Pasaporte":"Pasaporte"},"validation":{"rule":["required"],"messages":{"required":"El :attribute es obligatorio."}}}',
+                'order' => 3,
+            ),
+            112 => 
+            array (
+                'id' => 113,
+                'data_type_id' => 10,
+                'field' => 'celular',
+                'type' => 'number',
+                'display_name' => 'Celular',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":["nullable","min:5","max:15"],"messages":{"min":"El :attribute debe tener :min caracteres como m\\u00ednimo.","max":"El :attribute debe tener :max caracteres como m\\u00e1ximo."}}}',
+                'order' => 12,
             ),
         ));
         
