@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
+            $table->string('documento')->unique()->nullable();
+            $table->string('tipo_documento')->nullable();
             $table->string('name');
             $table->string('last_name');
             $table->string('last_name_m')->nullable();
             $table->string('last_name_c')->nullable();
             $table->string('email')->unique();
+            $table->string('celular')->nullable();
             $table->string('direccion');
             $table->string('sexo');
-            $table->string('fecha_de_nacimiento');
+            $table->date('fecha_de_nacimiento');
             $table->string('ciudad')->nullable();
             $table->string('barrio')->nullable();
             $table->string('ocupacion')->nullable();

@@ -265,15 +265,7 @@
                             </table>
                         </div>
                         @if ($isServerSide)
-                            <div class="pull-left">
-                                <div role="status" class="show-res" aria-live="polite">{{ trans_choice(
-                                    'voyager::generic.showing_entries', $dataTypeContent->total(), [
-                                        'from' => $dataTypeContent->firstItem(),
-                                        'to' => $dataTypeContent->lastItem(),
-                                        'all' => $dataTypeContent->total()
-                                    ]) }}</div>
-                            </div>
-                            <div class="pull-right">
+                            <div class="row">
                                 {{ $dataTypeContent->appends([
                                     's' => $search->value,
                                     'filter' => $search->filter,

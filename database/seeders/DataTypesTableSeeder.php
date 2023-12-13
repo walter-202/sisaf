@@ -143,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'materiales',
-                'updated_at' => '2023-11-21 21:50:46',
+                'updated_at' => '2023-12-08 21:00:15',
             ),
             7 => 
             array (
@@ -161,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'medicamentos',
-                'updated_at' => '2023-12-05 21:39:54',
+                'updated_at' => '2023-12-08 20:58:57',
             ),
             8 => 
             array (
@@ -179,7 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'servicios',
-                'updated_at' => '2023-10-02 00:47:57',
+                'updated_at' => '2023-12-08 21:01:08',
             ),
             9 => 
             array (
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 1,
                 'slug' => 'pacientes',
-                'updated_at' => '2023-12-05 21:41:09',
+                'updated_at' => '2023-12-12 20:39:40',
             ),
             10 => 
             array (
@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'citas',
-                'updated_at' => '2023-10-01 22:27:55',
+                'updated_at' => '2023-12-11 23:02:59',
             ),
             13 => 
             array (

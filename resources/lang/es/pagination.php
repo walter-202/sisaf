@@ -14,6 +14,9 @@ return [
     */
 
     'previous' => ' &laquo; Página Anterior  ',
-    'next' => ' Siguiente Página &raquo ;',
-
+    'next' => ' Siguiente Página &raquo ',
+    'Showing' => 'Mostrando ',
+    'to' => ' a ',
+    'of' => ' de ',
+    'results' => 'resultados',
 ];

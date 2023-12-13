@@ -5,3 +5,9 @@
 .toggle.btn{
     min-width:170px;
 }
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container{
+    width: 40px;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand{
+    width: 455px;
+}

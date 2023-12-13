@@ -11,7 +11,7 @@
                             <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                     </div>
-                    <div class="title">{{Voyager::setting('admin.title', 'SISAF')}}</div>
+                    <div class="title">{{Voyager::setting('admin.title', 'SISAF') . ' - ' . Auth::user()->role->name}}</div>
                 </a>
             </div><!-- .navbar-header -->
 
@@ -19,10 +19,10 @@
                 <div class="dimmer"></div>
                 <div class="panel-content">
                     <img src="{{ $user_avatar }}" class="avatar" alt="{{ Auth::user()->name }} avatar">
-                    <h4>{{ ucwords(Auth::user()->name) }}</h4>
-                    <p>{{ Auth::user()->role->name }}</p>
-
-                    <a href="{{ route('voyager.profile') }}" class="btn btn-primary">{{ __('voyager::generic.profile') }}</a>
+                    <div>
+                        <h4>{{ ucwords(Auth::user()->name) }}</h4>
+                        {{-- <p>{{  }}</p> --}}
+                    </div>
                     <div style="clear:both"></div>
                 </div>
             </div>
