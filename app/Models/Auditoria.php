@@ -12,7 +12,7 @@ class Auditoria extends Model implements \OwenIt\Auditing\Contracts\Audit
      * {@inheritdoc}
      */
     protected $guarded = [];
-    public $allow_export_all = true;
+    public $disable_export= true;
 
     /**
      * {@inheritdoc}

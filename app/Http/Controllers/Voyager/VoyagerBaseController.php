@@ -3,19 +3,11 @@
 namespace App\Http\Controllers\Voyager;
 
 use TCG\Voyager\Http\Controllers\VoyagerBaseController as BaseVoyagerBaseController;
-use Exception;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Database\Schema\SchemaManager;
-use TCG\Voyager\Events\BreadDataAdded;
-use TCG\Voyager\Events\BreadDataDeleted;
-use TCG\Voyager\Events\BreadDataRestored;
-use TCG\Voyager\Events\BreadDataUpdated;
-use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class VoyagerBaseController extends BaseVoyagerBaseController
 
@@ -51,13 +43,13 @@ class VoyagerBaseController extends BaseVoyagerBaseController
         if (strlen($dataType->model_name) != 0) {
             $model = app($dataType->model_name);
 
-            $query = $model::select($dataType->name.'.*');
+            $query = $model::select($dataType->name . '.*');
 
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
                 $query->{$dataType->scope}();
             }
 
-            // Use withTrashed() if model uses SoftDeletes and if toggle is selected
+            // Use onlyTrashed() if model uses SoftDeletes and if toggle is selected
             if ($model && in_array(SoftDeletes::class, class_uses_recursive($model)) && Auth::user()->can('delete', app($dataType->model_name))) {
                 $usesSoftDeletes = true;
 
@@ -72,9 +64,9 @@ class VoyagerBaseController extends BaseVoyagerBaseController
 
             if ($search->value != '' && $search->key && $search->filter) {
                 $search_filter = ($search->filter == 'equals') ? '=' : 'LIKE';
-                $search_value = ($search->filter == 'equals') ? $search->value : '%'.$search->value.'%';
+                $search_value = ($search->filter == 'equals') ? $search->value : '%' . $search->value . '%';
 
-                $searchField = $dataType->name.'.'.$search->key;
+                $searchField = $dataType->name . '.' . $search->key;
                 if ($row = $this->findSearchableRelationshipRow($dataType->rows->where('type', 'relationship'), $search->key)) {
                     $query->whereIn(
                         $searchField,
@@ -92,12 +84,12 @@ class VoyagerBaseController extends BaseVoyagerBaseController
                 $querySortOrder = (!empty($sortOrder)) ? $sortOrder : 'desc';
                 if (!empty($row)) {
                     $query->select([
-                        $dataType->name.'.*',
-                        'joined.'.$row->details->label.' as '.$orderBy,
+                        $dataType->name . '.*',
+                        'joined.' . $row->details->label . ' as ' . $orderBy,
                     ])->leftJoin(
-                        $row->details->table.' as joined',
-                        $dataType->name.'.'.$row->details->column,
-                        'joined.'.$row->details->key
+                        $row->details->table . ' as joined',
+                        $dataType->name . '.' . $row->details->column,
+                        'joined.' . $row->details->key
                     );
                 }
 
@@ -189,5 +181,4 @@ class VoyagerBaseController extends BaseVoyagerBaseController
             'showCheckboxColumn'
         ));
     }
-
 }

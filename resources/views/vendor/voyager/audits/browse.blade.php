@@ -7,11 +7,6 @@
         <h1 class="page-title">
             <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
         </h1>
-        @can('add', app($dataType->model_name))
-            <a href="{{ route('voyager.' . $dataType->slug . '.create') }}" class="btn btn-success btn-add-new">
-                <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
-            </a>
-        @endcan
         @can('delete', app($dataType->model_name))
             @include('voyager::partials.bulk-delete')
         @endcan
@@ -24,9 +19,8 @@
         @endcan
         @can('delete', app($dataType->model_name))
             @if ($usesSoftDeletes)
-                <input type="checkbox" @if ($showSoftDeleted) checked @endif id="show_soft_deletes"
-                    data-toggle="toggle" data-on="{{ __('voyager::bread.soft_deletes_off') }}"
-                    data-off="{{ __('voyager::bread.soft_deletes_on') }}">
+                <input type="checkbox" @if ($showSoftDeleted) checked @endif id="show_soft_deletes" data-toggle="toggle"
+                    data-on="{{ __('voyager::bread.soft_deletes_off') }}" data-off="{{ __('voyager::bread.soft_deletes_on') }}">
             @endif
         @endcan
         @foreach ($actions as $action)
@@ -66,9 +60,8 @@
                                         </select>
                                     </div>
                                     <div class="input-group col-md-12">
-                                        <input type="text" class="form-control"
-                                            placeholder="{{ __('generic.search') }}" name="s"
-                                            value="{{ $search->value }}">
+                                        <input type="text" class="form-control" placeholder="{{ __('generic.search') }}"
+                                            name="s" value="{{ $search->value }}">
                                         <span class="input-group-btn">
                                             <button class="btn btn-info btn-lg" type="submit">
                                                 <i class="voyager-search"></i>
@@ -128,7 +121,7 @@
                                                         $data->{$row->field} = $data->{$row->field . '_browse'};
                                                     }
                                                 @endphp
-                                                <td>
+                                                <td class="hover:bg-blue-100">
                                                     @if (isset($row->details->view_browse))
                                                         @include($row->details->view_browse, [
                                                             'row' => $row,
@@ -148,72 +141,82 @@
                                                             'view' => 'browse',
                                                             'options' => $row->details,
                                                         ])
-                                                    @elseif($row->type == 'image')
-                                                        <img src="@if (!filter_var($data->{$row->field}, FILTER_VALIDATE_URL)) {{ Voyager::image($data->{$row->field}) }}@else{{ $data->{$row->field} }} @endif"
-                                                            style="width:100px">
-                                                    @elseif($row->type == 'relationship')
-                                                        @include('voyager::formfields.relationship', [
-                                                            'view' => 'browse',
-                                                            'options' => $row->details,
-                                                        ])
-                                                    @elseif($row->type == 'select_multiple')
-                                                        @if (property_exists($row->details, 'relationship'))
-                                                            @foreach ($data->{$row->field} as $item)
-                                                                {{ $item->{$row->field} }}
-                                                            @endforeach
-                                                        @elseif(property_exists($row->details, 'options'))
-                                                            @if (!empty(json_decode($data->{$row->field})))
-                                                                @foreach (json_decode($data->{$row->field}) as $item)
-                                                                    @if (@$row->details->options->{$item})
-                                                                        {{ $row->details->options->{$item} . (!$loop->last ? ', ' : '') }}
-                                                                    @endif
-                                                                @endforeach
-                                                            @else
-                                                                {{ __('voyager::generic.none') }}
-                                                            @endif
-                                                        @endif
-                                                    @elseif($row->type == 'date' || $row->type == 'timestamp')
-                                                        @if (property_exists($row->details, 'format') && !is_null($data->{$row->field}))
-                                                            {{ \Carbon\Carbon::parse($data->{$row->field})->formatLocalized($row->details->format) }}
-                                                        @else
-                                                            {{ $data->{$row->field} }}
-                                                        @endif
-                                                    @elseif ($row->type == 'text')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                    @elseif ($row->field == 'user_id')
+                                                        @include('voyager::multilingual.input-hidden-bread-read')
                                                         <div>
-                                                            {{ is_array($data->{$row->field}) ? implode(', ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                            {{ $data->user->name }}
                                                         </div>
-                                                    @elseif($row->type == 'text_area')
+                                                    @elseif ($row->field == 'event')
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div class="primary">
+                                                            <span @class([
+                                                                'label',
+                                                                'label-info'=> $data->event == 'created',
+                                                                'label-danger'=> $data->event == 'deleted',
+                                                                'label-primary'=> $data->event == 'updated',
+                                                                'label-success'=> $data->event == 'restored',
+                                                                ])>
+                                                                {{ trans('auditoria.'. $data->event) }}
+                                                            </span>
+                                                        </div>
+                                                    @elseif ($row->field == 'auditable_type')
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>
-                                                            {{ is_array($data->{$row->field}) ? implode('- ', $data->{$row->field}) : htmlspecialchars($data->{$row->field}) }}
+                                                            {!! str_replace('App\Models\\', ' ', $data->auditable_type) !!}
+                                                        </div>
+                                                    @elseif ($row->field == 'old_values')
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div>
+                                                            <table class="table">
+                                                                @foreach ($data->old_values as $attribute => $value)
+                                                                    <tr>
+                                                                        <td><b
+                                                                                class="label label-primary">{{ $attribute }}:</b>
+                                                                        </td>
+                                                                        <td>
+                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value }}
+                                                                        </td>
+                                                                    </tr>
+                                                                @endforeach
+                                                            </table>
+                                                        </div>
+                                                    @elseif ($row->field == 'new_values')
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div>
+                                                            <table class="table">
+                                                                @foreach ($data->new_values as $attribute => $value)
+                                                                    <tr>
+                                                                        <td><b
+                                                                                class="label label-primary">{{ $attribute }}:</b>
+                                                                        </td>
+                                                                        <td>
+                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value }}
+                                                                        </td>
+                                                                    </tr>
+                                                                @endforeach
+                                                            </table>
                                                         </div>
                                                     @endif
+
+                                                    @include('voyager::multilingual.input-hidden-bread-browse')
                                                 </td>
                                             @endforeach
-<td class="no-sort no-click bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
-                                        </td>
+                                            <td class="no-sort no-click bread-actions">
+                                                @foreach ($actions as $action)
+                                                    @if (!method_exists($action, 'massAction'))
+                                                        @include('voyager::bread.partials.actions', [
+                                                            'action' => $action,
+                                                        ])
+                                                    @endif
+                                                @endforeach
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                         @if ($isServerSide)
-                            <div class="pull-left">
-                                <div role="status" class="show-res" aria-live="polite">
-                                    {{ __('voyager::generic.showing_entries', $dataTypeContent->total(), [
-                                        'from' => $dataTypeContent->firstItem(),
-                                        'to' => $dataTypeContent->lastItem(),
-                                        'all' => $dataTypeContent->total(),
-                                    ]) }}
-                                </div>
-                            </div>
-                            <div class="pull-right">
+                            <div class="row">
                                 {{ $dataTypeContent->appends([
                                         's' => $search->value,
                                         'filter' => $search->filter,

@@ -29,7 +29,21 @@ class User extends \TCG\Voyager\Models\User implements Auditable
         'email',
         'password',
     ];
+    protected $dates = ['deleted_at'];
 
+    public function scopeActive($query)
+    {
+        return $query->where('role_id', 7);
+    }
+    public function role()
+    {
+        return $this->belongsTo('TCG\Voyager\Models\Role');
+    }
+    public function getFullDataAttribute()
+    {
+        return  $this->name . ' ' . $this->email . ' ' . $this->role->name;
+    }
+    public $additional_attributes = ['full_data'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -39,7 +53,12 @@ class User extends \TCG\Voyager\Models\User implements Auditable
         'password',
         'remember_token',
     ];
-
+    protected $auditExclude = [
+        'remember_token',
+        'id',
+        'email_verified_at',
+        'settings',
+    ];
     /**
      * The attributes that should be cast.
      *
@@ -48,13 +67,4 @@ class User extends \TCG\Voyager\Models\User implements Auditable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function scopeActive($query)
-{
-    return $query->where('role_id', 7);
-}
-    public function role()
-{
-    return $this->belongsTo('TCG\Voyager\Models\Role');
-}
 }

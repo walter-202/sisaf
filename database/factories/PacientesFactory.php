@@ -23,10 +23,10 @@ class PacientesFactory extends Factory
     {
         $arrayValues = ['Masculino', 'Femenino'];
         $cities = ['La Paz', 'Oruro', 'Santa Cruz', 'Cochabamba', 'Tarija', 'Potosi', 'Chuquisaca', 'Beni', 'Pando' ];
-        $dateOfBirth=fake()->date('d-m-Y ','now');
-        $format= date_format($dateOfBirth, 'd/m/Y');
+        $dateOfBirth=fake()->date('now');
+        $format = Carbon::parse($dateOfBirth)->format('Y-m-d');
         $today = Carbon::now();
-        $age = $today->diffInYears($dateOfBirth);
+        $age = $today->diffInYears($format);
 
         return [
             'documento' => fake()->randomNumber(7,true),

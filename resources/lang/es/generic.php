@@ -2,7 +2,6 @@
 
 return [
     'is_rtl'                 => 'false',
-
     'action'                 => 'Acción',
     'actions'                => 'Acciones',
     'add'                    => 'Añadir',
@@ -85,7 +84,7 @@ return [
     'return_to_list'         => 'Volver a la lista',
     'route'                  => 'Ruta',
     'save'                   => 'Guardar',
-    'search'                 => 'Buscar123',
+    'search'                 => 'Buscar...',
     'select_all'             => 'Seleccionar todo',
     'select_group'           => 'Seleccione un grupo existente o añada uno',
     'settings'               => 'Ajustes',

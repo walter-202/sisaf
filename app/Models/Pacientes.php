@@ -15,13 +15,29 @@ class Pacientes extends Model implements Auditable
     public $allow_export_all = true;
 
     protected $fillable = [
+        'documento',
+        'tipo_documento',
         'name' ,
         'last_name',
+        'last_name_m',
+        'last_name_c',
+        'celular',
         'email',
         'sexo',
         'direccion',
         'fecha_de_nacimiento',
         'ciudad',
+        'barrio',
+        'ocupacion',
+        'grado',
+        'edad',
+        'referido',
+        'familiar',
     ];
-
+    protected $dates = ['deleted_at'];
+    public function getFullDataAttribute()
+    {
+        return $this->documento . ' ' . $this->name . ' ' . $this->name . ' ' . $this->last_name . ' ' . $this->last_name_m . ' ' . $this->email;
+    }
+    public $additional_attributes = ['full_data'];
 }

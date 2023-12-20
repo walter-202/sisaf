@@ -47,6 +47,7 @@ class Export extends AbstractAction
     {
         return [
             'class' => 'btn btn-sm btn-primary',
+            'id' => 'export_excel_btn',
         ];
     }
 

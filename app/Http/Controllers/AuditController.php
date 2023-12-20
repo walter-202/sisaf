@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+use App\Http\Controllers\Voyager\VoyagerBaseController as BaseVoyagerBaseController;
 
-class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
+class AuditController extends BaseVoyagerBaseController
 {
 
     use BreadRelationshipParser;
@@ -180,7 +181,7 @@ class AuditController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControlle
             $view = "voyager::$slug.browse";
         }
 
-
+// dd($dataTypeContent);
         return Voyager::view($view, compact(
             'actions',
             'dataType',

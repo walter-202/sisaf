@@ -11,8 +11,9 @@ use TCG\Voyager\Facades\Voyager;
 use Spatie\GoogleCalendar\Event;
 use TCG\Voyager\Events\BreadDataDeleted;
 use TCG\Voyager\Events\BreadDataUpdated;
+use App\Http\Controllers\Voyager\VoyagerBaseController as BaseVoyagerBaseController;
 
-class CitaController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
+class CitaController extends BaseVoyagerBaseController
 {
     public function update(Request $request, $id)
     {
