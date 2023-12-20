@@ -68,7 +68,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'role_id' => 5,
-                'name' => 'testing',
+                'name' => 'testing2',
                 'email' => 'mvargaskari@gmail.com',
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
@@ -76,7 +76,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'settings' => '{"locale":"es"}',
                 'created_at' => '2023-08-26 20:55:07',
-                'updated_at' => '2023-12-09 21:05:59',
+                'updated_at' => '2023-12-18 02:27:05',
                 'deleted_at' => NULL,
             ),
             4 => 
@@ -106,8 +106,8 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'settings' => NULL,
                 'created_at' => '2023-11-24 19:03:28',
-                'updated_at' => '2023-11-26 09:14:31',
-                'deleted_at' => '2023-11-26 09:14:31',
+                'updated_at' => '2023-12-18 02:29:02',
+                'deleted_at' => NULL,
             ),
         ));
         

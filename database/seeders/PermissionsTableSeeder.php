@@ -579,6 +579,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-11-21 21:45:03',
                 'updated_at' => '2023-11-21 21:45:03',
             ),
+            70 => 
+            array (
+                'id' => 86,
+                'key' => 'browse_historias',
+                'table_name' => 'historias',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
+            ),
+            71 => 
+            array (
+                'id' => 87,
+                'key' => 'read_historias',
+                'table_name' => 'historias',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
+            ),
+            72 => 
+            array (
+                'id' => 88,
+                'key' => 'edit_historias',
+                'table_name' => 'historias',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
+            ),
+            73 => 
+            array (
+                'id' => 89,
+                'key' => 'add_historias',
+                'table_name' => 'historias',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
+            ),
+            74 => 
+            array (
+                'id' => 90,
+                'key' => 'delete_historias',
+                'table_name' => 'historias',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
+            ),
         ));
         
         

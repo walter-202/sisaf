@@ -35,7 +35,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 15:13:44',
-                'updated_at' => '2023-12-05 20:57:45',
+                'updated_at' => '2023-12-12 22:52:17',
             ),
             1 => 
             array (
@@ -179,7 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 18:51:23',
-                'updated_at' => '2023-12-08 21:01:08',
+                'updated_at' => '2023-12-12 22:15:13',
             ),
             9 => 
             array (
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 18:58:42',
-                'updated_at' => '2023-12-12 20:39:40',
+                'updated_at' => '2023-12-17 21:24:21',
             ),
             10 => 
             array (
@@ -212,10 +212,10 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'App\\Http\\Controllers\\AuditController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-25 00:46:07',
-                'updated_at' => '2023-08-14 11:15:07',
+                'updated_at' => '2023-12-18 04:29:55',
             ),
             11 => 
             array (
@@ -233,7 +233,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-08-02 12:19:34',
-                'updated_at' => '2023-11-28 20:54:15',
+                'updated_at' => '2023-12-18 06:07:54',
             ),
             12 => 
             array (
@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-08-21 02:10:14',
-                'updated_at' => '2023-12-11 23:02:59',
+                'updated_at' => '2023-12-16 08:36:22',
             ),
             13 => 
             array (
@@ -288,6 +288,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
                 'created_at' => '2023-11-21 21:45:03',
                 'updated_at' => '2023-11-21 21:45:03',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'name' => 'historias',
+                'slug' => 'historias',
+                'display_name_singular' => 'Historia',
+                'display_name_plural' => 'Historias',
+                'icon' => 'voyager-documentation',
+                'model_name' => 'App\\Models\\Historia',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2023-12-16 08:39:33',
+                'updated_at' => '2023-12-16 08:39:33',
             ),
         ));
         

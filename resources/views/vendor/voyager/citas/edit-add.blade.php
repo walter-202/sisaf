@@ -12,7 +12,7 @@
 @section('page_title', __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
 
 @section('page_header')
-    <h1 class="page-title bg-sky-400">
+    <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
         {{ __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
@@ -92,12 +92,7 @@
                                         @endforeach
                                     @endif
                                 </div>
-
                             @endforeach
-
-
-                            <label class="radio-inline"><input type="radio" name="optradio" checked>Option 1</label>
-                        </div><!-- panel-body -->
 
                         <div class="panel-footer">
                             @section('submit-buttons')
