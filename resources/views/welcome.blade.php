@@ -1,1 +1,1 @@
-<a href="http://sisaf.test/admin">Ir</a>
+<a href="/admin">Ir al panel de administracion web SISAF</a>

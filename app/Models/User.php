@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
 class User extends \TCG\Voyager\Models\User implements Auditable
@@ -35,7 +36,7 @@ class User extends \TCG\Voyager\Models\User implements Auditable
     {
         return $query->where('role_id', 7);
     }
-    public function role()
+    public function role() : BelongsTo
     {
         return $this->belongsTo('TCG\Voyager\Models\Role');
     }

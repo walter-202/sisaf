@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             MaterialesTableSeeder::class,
             ServiciosTableSeeder::class,
             AuditsTableSeeder::class,
+            HorariosTableSeeder::class,
         ]);
     }
 }
