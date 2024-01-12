@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             ServiciosTableSeeder::class,
             AuditsTableSeeder::class,
             HorariosTableSeeder::class,
+            CitasTableSeeder::class,
         ]);
     }
 }

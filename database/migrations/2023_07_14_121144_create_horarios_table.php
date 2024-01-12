@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id();
-            $table->string('day')->unique();
+            $table->string('day');
             $table->time('from');
             $table->time('to');
             $table->unsignedInteger('step')->default(60);
