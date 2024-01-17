@@ -10,9 +10,22 @@ class ScheduleServicesObserver
     /**
      * Handle the Servicios "created" event.
      */
+
     public function created(Servicios $servicios): void
     {
-        Create:
+    $days = config('appointments.days');
+        foreach ($days as $day){
+            $horarios = Horarios::create([
+                'day' => $day,
+                'from' => '09:00',
+                'to' => '17:00',
+                'step'=> 30,
+                'off' => 0,
+                'servicio_id' => $servicios->id,
+            ]
+            );
+            $horarios->save();
+        }
     }
 
     /**
