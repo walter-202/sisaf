@@ -23,10 +23,9 @@ class PacientesFactory extends Factory
     {
         $gender = ['Masculino', 'Femenino'];
         $cities = ['La Paz', 'Oruro', 'Santa Cruz', 'Cochabamba', 'Tarija', 'Potosi', 'Chuquisaca', 'Beni', 'Pando' ];
-        $dateOfBirth=fake()->date('now');
-        $format = Carbon::parse($dateOfBirth);
+        $dateOfBirth=fake()->dateTimeBetween('-50 years', '-14 years')->format('Y-m-d');
         $today = Carbon::now();
-        $age = $today->diffInYears($format);
+        $age = $today->diffInYears($dateOfBirth);
 
         return [
             'documento' => fake()->randomNumber(7,true),
@@ -40,7 +39,7 @@ class PacientesFactory extends Factory
             'ciudad'=> $cities[rand(0,8)],
             'direccion' => fake()->address(),
             'barrio' => fake()->streetAddress(),
-            'fecha_de_nacimiento' => $format,
+            'fecha_de_nacimiento' => $dateOfBirth,
             'edad' => $age,
         ];
     }
