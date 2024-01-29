@@ -185,11 +185,15 @@
                                                             {{ __('voyager::generic.none') }}
                                                         @endif
                                                     @elseif(($row->type == 'select_dropdown' || $row->type == 'radio_btn') && property_exists($row->details, 'options'))
-                                                        {!! str_ireplace(
-                                                            request()->get('s'),
-                                                            '<span class="bg-blue-300">' . request()->get('s') . '</span>',
-                                                            $row->details->options->{$data->{$row->field}} ?? '',
-                                                        ) !!}
+                                                        @if (request()->get('s'))
+                                                            {!! str_ireplace(
+                                                                request()->get('s'),
+                                                                '<span class="bg-blue-300">' . request()->get('s') . '</span>',
+                                                                $row->details->options->{$data->{$row->field}} ?? '',
+                                                            ) !!}
+                                                        @else
+                                                            {{ $data->{$row->field} }}
+                                                        @endif
                                                     @elseif($row->type == 'date' || $row->type == 'timestamp')
                                                         @if (property_exists($row->details, 'format') && !is_null($data->{$row->field}))
                                                             {{ \Carbon\Carbon::parse($data->{$row->field})->formatLocalized($row->details->format) }}
@@ -214,11 +218,15 @@
                                                     @elseif($row->type == 'text')
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>
-                                                            {!! str_ireplace(
-                                                                request()->get('s'),
-                                                                '<span class="bg-blue-300">' . request()->get('s') . '</span>',
-                                                                mb_strlen($data->{$row->field}) > 100 ? mb_substr($data->{$row->field}, 0, 100) . ' ...' : $data->{$row->field},
-                                                            ) !!}
+                                                            @if (request()->get('s'))
+                                                                {!! str_ireplace(
+                                                                    request()->get('s'),
+                                                                    '<span class="bg-blue-300">' . request()->get('s') . '</span>',
+                                                                    mb_strlen($data->{$row->field}) > 100 ? mb_substr($data->{$row->field}, 0, 100) . ' ...' : $data->{$row->field},
+                                                                ) !!}
+                                                            @else
+                                                                {{ $data->{$row->field} }}
+                                                            @endif
                                                         </div>
                                                     @elseif($row->type == 'text_area')
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
@@ -295,11 +303,17 @@
                                                         @endif
                                                     @else
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
-                                                        <span> {!! str_replace(
-                                                            request()->get('s'),
-                                                            '<span class="bg-blue-300">' . request()->get('s') . '</span>',
-                                                            $data->{$row->field},
-                                                        ) !!}</span>
+                                                        <span>
+                                                            @if (request()->get('s'))
+                                                                {!! str_ireplace(
+                                                                    request()->get('s'),
+                                                                    '<span class="bg-blue-300">' . request()->get('s') . '</span>',
+                                                                    $data->{$row->field} ?? '',
+                                                                ) !!}
+                                                            @else
+                                                                {{ $data->{$row->field} }}
+                                                            @endif
+                                                        </span>
                                                     @endif
                                                 </td>
                                             @endforeach

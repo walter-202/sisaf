@@ -21,4 +21,6 @@ Route::redirect('/', '/admin', 301);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+
 });

@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class CrearHistoria extends AbstractAction
+class CrearSeguimiento extends AbstractAction
 {
     public function getTitle()
     {

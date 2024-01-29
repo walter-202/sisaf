@@ -14,12 +14,12 @@ class DataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('data_types')->delete();
-
+        
         \DB::table('data_types')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'name' => 'users',
@@ -37,7 +37,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-12-12 22:52:17',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'name' => 'menus',
@@ -55,7 +55,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-07-14 15:13:44',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'name' => 'roles',
@@ -73,7 +73,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-07-14 15:13:44',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'name' => 'categories',
@@ -91,7 +91,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-07-14 15:13:44',
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'name' => 'posts',
@@ -109,7 +109,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-07-14 15:13:44',
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'name' => 'pages',
@@ -127,7 +127,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:13:44',
                 'updated_at' => '2023-07-14 15:13:44',
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'name' => 'materiales',
@@ -145,7 +145,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 15:42:10',
                 'updated_at' => '2023-12-08 21:00:15',
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'name' => 'medicamentos',
@@ -163,7 +163,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:49:58',
                 'updated_at' => '2023-12-08 20:58:57',
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'name' => 'servicios',
@@ -181,7 +181,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-14 18:51:23',
                 'updated_at' => '2023-12-12 22:15:13',
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'name' => 'pacientes',
@@ -195,11 +195,11 @@ class DataTypesTableSeeder extends Seeder
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 1,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":"name","scope":null}',
                 'created_at' => '2023-07-14 18:58:42',
-                'updated_at' => '2023-12-17 21:24:21',
+                'updated_at' => '2024-01-25 21:12:38',
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'name' => 'audits',
@@ -217,7 +217,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-07-25 00:46:07',
                 'updated_at' => '2023-12-18 04:29:55',
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 12,
                 'name' => 'horarios',
@@ -235,7 +235,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-08-02 12:19:34',
                 'updated_at' => '2023-12-18 06:07:54',
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 13,
                 'name' => 'citas',
@@ -248,12 +248,12 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'App\\Http\\Controllers\\CitaController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 0,
+                'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-08-21 02:10:14',
-                'updated_at' => '2023-12-16 08:36:22',
+                'updated_at' => '2024-01-25 21:34:10',
             ),
-            13 =>
+            13 => 
             array (
                 'id' => 14,
                 'name' => 'recetarios',
@@ -271,7 +271,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-11-15 20:47:51',
                 'updated_at' => '2023-11-15 20:47:51',
             ),
-            14 =>
+            14 => 
             array (
                 'id' => 15,
                 'name' => 'historia',
@@ -289,7 +289,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-11-21 21:45:03',
                 'updated_at' => '2023-11-21 21:45:03',
             ),
-            15 =>
+            15 => 
             array (
                 'id' => 16,
                 'name' => 'historias',
@@ -308,7 +308,7 @@ class DataTypesTableSeeder extends Seeder
                 'updated_at' => '2023-12-16 08:39:33',
             ),
         ));
-
-
+        
+        
     }
 }

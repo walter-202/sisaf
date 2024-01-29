@@ -21,10 +21,10 @@ class PacientesFactory extends Factory
      */
     public function definition()
     {
-        $arrayValues = ['Masculino', 'Femenino'];
+        $gender = ['Masculino', 'Femenino'];
         $cities = ['La Paz', 'Oruro', 'Santa Cruz', 'Cochabamba', 'Tarija', 'Potosi', 'Chuquisaca', 'Beni', 'Pando' ];
         $dateOfBirth=fake()->date('now');
-        $format = Carbon::parse($dateOfBirth)->format('Y-m-d');
+        $format = Carbon::parse($dateOfBirth);
         $today = Carbon::now();
         $age = $today->diffInYears($format);
 
@@ -36,7 +36,7 @@ class PacientesFactory extends Factory
             'last_name_m' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'celular' => fake()->numerify('7######'),
-            'sexo' => $arrayValues[rand(0,1)],
+            'sexo' => $gender[rand(0,1)],
             'ciudad'=> $cities[rand(0,8)],
             'direccion' => fake()->address(),
             'barrio' => fake()->streetAddress(),

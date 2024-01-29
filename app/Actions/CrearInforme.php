@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class MyAction extends AbstractAction
+class CrearInforme extends AbstractAction
 {
     public function getTitle()
     {

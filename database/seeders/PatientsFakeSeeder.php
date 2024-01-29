@@ -14,6 +14,6 @@ class PatientsFakeSeeder extends Seeder
      */
     public function run()
     {
-        Pacientes::factory(1)->create();
+        Pacientes::factory(10)->create();
     }
 }

@@ -34,7 +34,7 @@ class ServiciosDimmer extends BaseDimmer
                 'text' => __('dimmer.user_link_text',['string' => Str::lower($string)]),
                 'link' => route('voyager.servicios.index'),
             ],
-            'image' => asset('storage/settings/July2023/UFC90JuIt3w8E4NSPBDh.jpg'),
+            'image' => asset('storage/settings/UFC90JuIt3w8E4NSPBDh.jpg'),
         ]));
     }
 

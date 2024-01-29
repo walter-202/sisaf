@@ -174,7 +174,7 @@
                                                                                 class="label label-primary">{{ $attribute }}:</b>
                                                                         </td>
                                                                         <td>
-                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value }}
+                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value ?? 'No existía ningun valor' }}
                                                                         </td>
                                                                     </tr>
                                                                 @endforeach
@@ -190,7 +190,7 @@
                                                                                 class="label label-primary">{{ $attribute }}:</b>
                                                                         </td>
                                                                         <td>
-                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value }}
+                                                                            {{ mb_strlen($value) > 20 ? mb_substr($value, 0, 20) . ' ...' : $value ?? 'No existía ningun valor ' }}
                                                                         </td>
                                                                     </tr>
                                                                 @endforeach
