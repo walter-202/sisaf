@@ -31,9 +31,12 @@ class User extends \TCG\Voyager\Models\User implements Auditable
     ];
     protected $dates = ['deleted_at'];
 
-    public function scopeActive($query)
+    public function scopeAllowed($query)
     {
-        return $query->where('role_id', 7);
+        return $query->where('role_id', 7)
+            ->orWhere('role_id', 5)
+            ->orWhere('role_id', 3)
+            ->orWhere('role_id', 6);
     }
     public function role() : BelongsTo
     {

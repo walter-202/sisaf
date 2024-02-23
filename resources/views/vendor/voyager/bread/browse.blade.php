@@ -34,7 +34,7 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        @include('voyager::multilingual.language-selector')
+        {{-- @include('voyager::multilingual.language-selector') --}}
     </div>
 @stop
 
@@ -117,6 +117,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($dataTypeContent as $data)
+                                                    {{-- @dd($data) --}}
                                         <tr>
                                             @if ($showCheckboxColumn)
                                                 <td>
@@ -196,7 +197,7 @@
                                                         @endif
                                                     @elseif($row->type == 'date' || $row->type == 'timestamp')
                                                         @if (property_exists($row->details, 'format') && !is_null($data->{$row->field}))
-                                                            {{ \Carbon\Carbon::parse($data->{$row->field})->formatLocalized($row->details->format) }}
+                                                            {{ \Carbon\Carbon::parse($data->{$row->field})->isoFormat($row->details->format) }}
                                                         @else
                                                             {{ $data->{$row->field} }}
                                                         @endif
@@ -216,7 +217,7 @@
                                                         <span class="badge badge-lg"
                                                             style="background-color: {{ $data->{$row->field} }}">{{ $data->{$row->field} }}</span>
                                                     @elseif($row->type == 'text')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        {{-- @include('voyager::multilingual.input-hidden-bread-browse') --}}
                                                         <div>
                                                             @if (request()->get('s'))
                                                                 {!! str_ireplace(
@@ -229,12 +230,12 @@
                                                             @endif
                                                         </div>
                                                     @elseif($row->type == 'text_area')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        {{-- @include('voyager::multilingual.input-hidden-bread-browse') --}}
                                                         <div>
                                                             {{ mb_strlen($data->{$row->field}) > 100 ? mb_substr($data->{$row->field}, 0, 100) . ' ...' : $data->{$row->field} }}
                                                         </div>
                                                     @elseif($row->type == 'file' && !empty($data->{$row->field}))
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        {{-- @include('voyager::multilingual.input-hidden-bread-browse') --}}
                                                         @if (json_decode($data->{$row->field}) !== null)
                                                             @foreach (json_decode($data->{$row->field}) as $file)
                                                                 <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
@@ -250,7 +251,7 @@
                                                             </a>
                                                         @endif
                                                     @elseif($row->type == 'rich_text_box')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        {{-- @include('voyager::multilingual.input-hidden-bread-browse') --}}
                                                         <div>
                                                             {{ mb_strlen(strip_tags($data->{$row->field}, '<b><i><u>')) > 200 ? mb_substr(strip_tags($data->{$row->field}, '<b><i><u>'), 0, 200) . ' ...' : strip_tags($data->{$row->field}, '<b><i><u>') }}
                                                         </div>
@@ -302,7 +303,7 @@
                                                             {{ trans_choice('voyager::media.files', 0) }}
                                                         @endif
                                                     @else
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        {{-- @include('voyager::multilingual.input-hidden-bread-browse') --}}
                                                         <span>
                                                             @if (request()->get('s'))
                                                                 {!! str_ireplace(

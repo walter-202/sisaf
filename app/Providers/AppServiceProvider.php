@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Events\Dispatcher;
 use TCG\Voyager\Facades\Voyager;
@@ -25,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Carbon::setLocale('es');
+        setlocale(LC_TIME, 'es_ES');
         Voyager::addAction(\App\Actions\CrearHistoria::class);
     }
 }

@@ -28,6 +28,8 @@ class CrearHistoria extends AbstractAction
     {
         return [
             'class' => 'btn btn-md btn-info pull-right',
+            'data-id' => $this->data->{$this->data->getKeyName()},
+            'id'      => 'delete-'.$this->data->{$this->data->getKeyName()},
         ];
     }
 

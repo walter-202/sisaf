@@ -21,12 +21,12 @@ class ServiciosTableSeeder extends Seeder
         \DB::table('servicios')->insert(array (
             0 => 
             array (
-                'created_at' => '2023-07-18 01:34:26',
-                'deleted_at' => NULL,
                 'id' => 1,
                 'name' => 'Ecografía',
                 'precio' => '100',
+                'created_at' => '2023-07-18 01:34:26',
                 'updated_at' => '2023-07-18 01:34:26',
+                'deleted_at' => NULL,
             ),
         ));
         

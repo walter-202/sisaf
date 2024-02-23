@@ -15,7 +15,7 @@ class ScheduleServicesObserver
     {
     $days = config('appointments.days');
         foreach ($days as $day){
-            $horarios = Horarios::create([
+            $horarios = Horarios::query()->updateOrCreate([
                 'day' => $day,
                 'from' => '09:00',
                 'to' => '17:00',

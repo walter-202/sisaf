@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('paciente_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     /**

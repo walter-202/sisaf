@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
+use App\Http\Controllers\CitaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,5 @@ Route::redirect('/', '/admin', 301);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-
 
 });

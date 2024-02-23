@@ -107,35 +107,33 @@
                                         @include('voyager::formfields.relationship', [
                                             'options' => $row->details,
                                         ])
-                                    @elseif ($row->type == 'radio_btn')
-                                        @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                        <div class="primary">
-                                            <ul class="radio">
-                                                @if (isset($options->options))
-                                                    @foreach ($options->options as $key => $option)
-                                                        <li>
-                                                            <input type="radio"
-                                                                id="option-{{ \Illuminate\Support\Str::slug($row->field, '-') }}-{{ \Illuminate\Support\Str::slug($key, '-') }}"
-                                                                name="{{ $row->field }}" value="{{ $key }}"
-                                                                @if ($selected_value == $key) checked @endif>
-                                                            <label
-                                                                for="option-{{ \Illuminate\Support\Str::slug($row->field, '-') }}-{{ \Illuminate\Support\Str::slug($key, '-') }}">{{ $option }}</label>
-                                                            <div class="check"></div>
-                                                        </li>
-                                                    @endforeach
-                                                @endif
-                                            </ul>
+                                    @elseif ($row->field == 'date')
 
-                                            {{-- <span @class([
-                                                                'label',
-                                                                'label-info'=> $data->event == 'created',
-                                                                'label-danger'=> $data->event == 'deleted',
-                                                                'label-primary'=> $data->event == 'updated',
-                                                                'label-success'=> $data->event == 'restored',
-                                                                ])>
-                                                                {{ trans('auditoria.'. $data->event) }}
-                                                            </span> --}}
-                                        </div>
+                                    @elseif ($row->field == 'time')
+                                        <fieldset class="flex flex-wrap gap-3" id="horarios">
+                                            <div class="alert alert-info w-full" role="alert">
+                                                <h3>Lunes </h3>
+                                            </div>
+                                            <legend class="sr-only">Horarios</legend>
+
+                                            <div>
+                                                <label for="ColorBlack"
+                                                    class="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 hover:border-gray-400 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-500 has-[:checked]:text-white">
+                                                    <input type="radio" name="ColorOption" value="ColorBlack"
+                                                        id="ColorBlack" class="sr-only" />
+                                                    <p class="text-sm font-medium">14:00 - 14:30</p>
+                                                </label>
+                                            </div>
+
+                                            <div>
+                                                <label for="Color"
+                                                    class="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 hover:border-gray-400 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-500 has-[:checked]:text-white">
+                                                    <input type="radio" name="ColorOption" value="Color" id="Color"
+                                                        class="sr-only" />
+                                                    <p class="text-sm font-medium">14:00 - 14:30</p>
+                                                </label>
+                                            </div>
+                                        </fieldset>
                                     @else
                                         {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
                                     @endif
@@ -272,5 +270,22 @@
         });
         $('[data-toggle="tooltip"]').tooltip();
     });
+
+    $('#servicio').on('select2:select', async function(e) {
+        let servicioId = e.params.data.id;
+        console.log(servicioId);
+        await obtenerHorarios(servicioId);
+    });
+    async function obtenerHorarios(servicioId) {
+        const response = await $.ajax({
+            url: "https://sisaf.test/api/horarios",
+            method: "POST",
+            data: {
+                servicio_id: servicioId,
+            },
+        });
+
+        console.log(response);
+    }
 </script>
 @stop

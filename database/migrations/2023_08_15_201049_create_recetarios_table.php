@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('recetarios', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('paciente_id')->constrained();
             $table->text('receta');
             $table->timestamps();
             $table->softDeletes();

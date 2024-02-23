@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button class="hamburger btn-link">
+            <button class="hamburger btn-link" role="menu" aria-label="Menu" >
                 <span class="hamburger-inner"></span>
             </button>
             @section('breadcrumbs')

@@ -28,7 +28,6 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        @include('voyager::multilingual.language-selector')
     </div>
 @stop
 
@@ -142,12 +141,10 @@
                                                             'options' => $row->details,
                                                         ])
                                                     @elseif ($row->field == 'user_id')
-                                                        @include('voyager::multilingual.input-hidden-bread-read')
                                                         <div>
                                                             {{ $data->user->name }}
                                                         </div>
                                                     @elseif ($row->field == 'event')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div class="primary">
                                                             <span @class([
                                                                 'label',
@@ -160,12 +157,10 @@
                                                             </span>
                                                         </div>
                                                     @elseif ($row->field == 'auditable_type')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>
                                                             {!! str_replace('App\Models\\', ' ', $data->auditable_type) !!}
                                                         </div>
                                                     @elseif ($row->field == 'old_values')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>
                                                             <table class="table">
                                                                 @foreach ($data->old_values as $attribute => $value)
@@ -181,7 +176,6 @@
                                                             </table>
                                                         </div>
                                                     @elseif ($row->field == 'new_values')
-                                                        @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>
                                                             <table class="table">
                                                                 @foreach ($data->new_values as $attribute => $value)
@@ -197,8 +191,6 @@
                                                             </table>
                                                         </div>
                                                     @endif
-
-                                                    @include('voyager::multilingual.input-hidden-bread-browse')
                                                 </td>
                                             @endforeach
                                             <td class="no-sort no-click bread-actions">
@@ -291,7 +283,6 @@
 
             @if ($isModelTranslatable)
                 $('.side-body').multilingual();
-                //Reinitialise the multilingual features when they change tab
                 $('#dataTable').on('draw.dt', function() {
                     $('.side-body').data('multilingual').init();
                 })

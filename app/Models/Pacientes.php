@@ -37,7 +37,10 @@ class Pacientes extends Model implements Auditable
     protected $dates = ['deleted_at'];
     public function getFullDataAttribute()
     {
-        return $this->documento . ' ' . $this->name . ' ' . $this->name . ' ' . $this->last_name . ' ' . $this->last_name_m . ' ' . $this->email;
+        return $this->documento . ' ' . $this->name . ' ' . $this->last_name . ' ' . $this->last_name_m . ' ' . $this->email;
+    }public function getFullNameAttribute()
+    {
+        return $this->name . ' ' . $this->last_name . ' ' . $this->last_name_m ;
     }
-    public $additional_attributes = ['full_data'];
+    public $additional_attributes = ['full_data', 'full_name'];
 }
