@@ -108,30 +108,13 @@
                                             'options' => $row->details,
                                         ])
                                     @elseif ($row->field == 'date')
-
+                                        <h2 class="label label-success"> Dia seleccionado :</h2>
+                                        <input type="hidden" name="date" id="date_format">
+                                        <input type="hidden" name="step" id="date_step">
                                     @elseif ($row->field == 'time')
                                         <fieldset class="flex flex-wrap gap-3" id="horarios">
-                                            <div class="alert alert-info w-full" role="alert">
-                                                <h3>Lunes </h3>
-                                            </div>
-                                            <legend class="sr-only">Horarios</legend>
-
-                                            <div>
-                                                <label for="ColorBlack"
-                                                    class="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 hover:border-gray-400 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-500 has-[:checked]:text-white">
-                                                    <input type="radio" name="ColorOption" value="ColorBlack"
-                                                        id="ColorBlack" class="sr-only" />
-                                                    <p class="text-sm font-medium">14:00 - 14:30</p>
-                                                </label>
-                                            </div>
-
-                                            <div>
-                                                <label for="Color"
-                                                    class="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 hover:border-gray-400 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-500 has-[:checked]:text-white">
-                                                    <input type="radio" name="ColorOption" value="Color" id="Color"
-                                                        class="sr-only" />
-                                                    <p class="text-sm font-medium">14:00 - 14:30</p>
-                                                </label>
+                                            <div class="alert alert-warning w-full">
+                                                <h3>Seleccione el servicio a reservar </h3>
                                             </div>
                                         </fieldset>
                                     @else
@@ -271,21 +254,69 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 
-    $('#servicio').on('select2:select', async function(e) {
+    $('select[name="servicio_id"]').on('select2:select', async function(e) {
         let servicioId = e.params.data.id;
-        console.log(servicioId);
+        {{-- console.log(servicioId); --}}
+        $('#horarios').empty();
         await obtenerHorarios(servicioId);
     });
-    async function obtenerHorarios(servicioId) {
-        const response = await $.ajax({
-            url: "https://sisaf.test/api/horarios",
-            method: "POST",
-            data: {
-                servicio_id: servicioId,
-            },
-        });
 
-        console.log(response);
+    async function obtenerHorarios(servicioId) {
+        const response = await $.get({
+            url: "https://sisaf.test/api/horarios/" + servicioId,
+            cache: "true",
+            success: function(response) {
+                {{-- console.log(response); --}}
+                const horariosContainer = $('#horarios'); // Obtener el contenedor de los horarios
+                response.forEach(dia => {
+                    const fieldset = $('<fieldset class="flex flex-wrap gap-3"></fieldset>');
+                    const alert = $('<div class="alert alert-info w-full"></div>');
+                    const diaNombre = $('<h3>').text(dia.day_name)
+                    const diaCompleto = $('<h3>').text(dia.date);
+                    const diaStep = $('<h3>').text("Tiempo de consulta : " + dia.step);
+                    alert.append([diaNombre, diaCompleto, diaStep]);
+                    fieldset.append(alert);
+
+                    dia.available_hours.forEach(hora => {
+                        const horaContainer = $('<div>');
+                        const label = $('<label>')
+                            .attr('for',
+                                `hora_${dia.day_name}_${hora.replace(':', '')}`)
+                            .addClass(
+                                'cursor-pointer border border-gray-400 p-2 hover:scale-105 has-[:checked]:bg-blue-400 has-[:checked]:text-white'
+                            );
+                        const input = $('<input type="radio" name="time" />')
+                            .val(hora)
+                            .addClass(
+                                'sr-only'
+                            )
+                            .attr({
+                                'data-date': dia.date_format,
+                                'data-step': dia.step,
+                                'id': `hora_${dia.day_name}_${hora.replace(':', '')}`
+                            });
+
+                        const paragraph = $('<p>')
+                            .text(hora)
+
+                        label.append([input, paragraph]);
+                        horaContainer.append(label);
+                        fieldset.append(horaContainer);
+                    });
+                    horariosContainer.append(fieldset); // Anexar al contenedor principal
+                });
+            }
+        });
     }
+    $('#horarios').on('change', 'input[type="radio"]', function() {
+        const selectedDate = $(this).data('date');
+        const selectedStep = $(this).data('step');
+        const $label = $('.label.label-success');
+        $label.text('Dia seleccionado : ' + selectedDate);
+        {{-- console.log(selectedDate); --}}
+        //input hidden for selectedDate
+        $('#date_format').val(selectedDate);
+        $('#date_step').val(selectedStep);
+    });
 </script>
 @stop

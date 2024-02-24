@@ -14,6 +14,8 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use App\Http\Controllers\Voyager\VoyagerBaseController as BaseVoyagerBaseController;
 use App\Services\CitaService;
 use Carbon\CarbonPeriod;
+use App\Mail\EmailCita;
+use Illuminate\Support\Facades\Mail;
 
 class CitaController extends BaseVoyagerBaseController
 {
@@ -32,7 +34,7 @@ class CitaController extends BaseVoyagerBaseController
             if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
                 $query = $query->withTrashed();
             }
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
                 $query = $query->{$dataType->scope}();
             }
             $dataTypeContent = call_user_func([$query, 'findOrFail'], $id);
@@ -75,8 +77,8 @@ class CitaController extends BaseVoyagerBaseController
         $this->authorize('add', app($dataType->model_name));
 
         $dataTypeContent = (strlen($dataType->model_name) != 0)
-                            ? new $dataType->model_name()
-                            : false;
+            ? new $dataType->model_name()
+            : false;
 
         foreach ($dataType->addRows as $key => $row) {
             $dataType->addRows[$key]['col_width'] = $row->details->width ?? 100;
@@ -98,13 +100,14 @@ class CitaController extends BaseVoyagerBaseController
         }
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
-    public function getDateTimes(Request $request , $serviceId){
+    public function getDateTimes(Request $request, $serviceId)
+    {
         $datePeriod = CarbonPeriod::create(now(), now()->addDays(6));
         $citas = [];
-        foreach($datePeriod as $date){
-            $citas [] = (new CitaService)->generateTimeData($date, $serviceId);
+        foreach ($datePeriod as $date) {
+            $citas[] = (new CitaService)->generateTimeData($date, $serviceId);
         }
-        dump($citas);
+        // dump($citas);
         return response()->json($citas);
     }
     public function update(Request $request, $id)
@@ -118,7 +121,7 @@ class CitaController extends BaseVoyagerBaseController
 
         $model = app($dataType->model_name);
         $query = $model->query();
-        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
             $query = $query->{$dataType->scope}();
         }
         if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
@@ -138,7 +141,7 @@ class CitaController extends BaseVoyagerBaseController
             ->filter(function ($item, $key) use ($request) {
                 return $request->hasFile($item->field);
             });
-        $original_data = clone($data);
+        $original_data = clone ($data);
 
         $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
@@ -154,7 +157,7 @@ class CitaController extends BaseVoyagerBaseController
         }
 
         return $redirect->with([
-            'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+            'message'    => __('voyager::generic.successfully_updated') . " {$dataType->getTranslatedAttribute('display_name_singular')}",
             'alert-type' => 'success',
         ]);
     }
@@ -165,38 +168,32 @@ class CitaController extends BaseVoyagerBaseController
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        dump($request);
         // Check permission
         $this->authorize('add', app($dataType->model_name));
 
         // Validate fields with ajax
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
-        $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
-
-        $Paciente= Pacientes::select('name', 'email')->find($request->input('paciente_id'));
+        $Paciente = Pacientes::select('name', 'email')->find($request->input('paciente_id'));
         $Doctor = User::select('name', 'email')->find($request->input('user_id'));
-        $value = $request->input('duracion');
-
+        $name = $request->input('motivo');
+        $value = $request->input('step');
         $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
         $endTime = (clone $starTime)->addMinutes($value);
 
-        $CalendarEvent = new Event();
+        // Enviar email al paciente
+        Mail::to($Paciente->email)->send(new EmailCita($name, $starTime, $endTime, $value));
 
-        $CalendarEvent->name = $request->input('motivo');
-        $CalendarEvent->startDateTime =$starTime;
-        $CalendarEvent->endDateTime = $endTime;
+        // Enviar email al Doctor
+        Mail::to($Doctor->email)->send(new EmailCita($name, $starTime, $endTime, $value));
+        dd($endTime);
+        $calendarEvent = new Event;
+        $calendarEvent->name = $name;
+        $calendarEvent->startDateTime = $starTime;
+        $calendarEvent->endDateTime = $endTime;
+        $calendarEvent->save();
 
-// Envio de mails mediante Google Calendar
-
-        // $CalendarEvent->addAttendee([
-        //     'name'  => $Doctor->name ,
-        //     'email' => $Doctor->email,
-        // ]);
-        // $CalendarEvent->addAttendee([
-        //     'name'  => $Paciente->name,
-        //     'email' => $Paciente->email,
-        // ]);
-        $CalendarEvent->save();
+        $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
         event(new BreadDataAdded($dataType, $data));
         //
@@ -263,11 +260,11 @@ class CitaController extends BaseVoyagerBaseController
 
         $data = $affected
             ? [
-                'message'    => __('voyager::generic.successfully_deleted')." {$displayName}",
+                'message'    => __('voyager::generic.successfully_deleted') . " {$displayName}",
                 'alert-type' => 'success',
             ]
             : [
-                'message'    => __('voyager::generic.error_deleting')." {$displayName}",
+                'message'    => __('voyager::generic.error_deleting') . " {$displayName}",
                 'alert-type' => 'error',
             ];
 

@@ -15,13 +15,16 @@ class CitaService
         ->where('servicio_id', $serviceId)
         ->first();
         $horas = array_filter($horario->TimesPeriod);
-        $currentCita = Cita::where('date', $date->toDateString())->pluck('time')->map(function ($time) {
+        $currentCita = Cita::where('servicio_id', $serviceId)
+        ->where('date', $date->toDateString())->pluck('time')->map(function ($time) {
             return Carbon::parse($time)->format('H:i');
         })->toArray();
         $horasDisponibles = array_diff($horas, $currentCita);
         return [
             'day_name' => $dayName,
             'date' => $date->isoFormat('LL'),
+            'date_format' => $date->format('Y-m-d'),
+            'step' => $horario->step,
             'available_hours' => $horasDisponibles,
             'reserved_hours' => $currentCita,
             'business_hours' => $horas,
