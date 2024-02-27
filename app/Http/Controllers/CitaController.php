@@ -8,7 +8,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use TCG\Voyager\Events\BreadDataAdded;
 use TCG\Voyager\Facades\Voyager;
-use Spatie\GoogleCalendar\Event;
 use TCG\Voyager\Events\BreadDataDeleted;
 use TCG\Voyager\Events\BreadDataUpdated;
 use App\Http\Controllers\Voyager\VoyagerBaseController as BaseVoyagerBaseController;
@@ -100,7 +99,7 @@ class CitaController extends BaseVoyagerBaseController
         }
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
-    public function getDateTimes(Request $request, $serviceId)
+    public function getDateTimes($serviceId)
     {
         $datePeriod = CarbonPeriod::create(now(), now()->addDays(6));
         $citas = [];
@@ -168,35 +167,15 @@ class CitaController extends BaseVoyagerBaseController
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-        dump($request);
+
         // Check permission
         $this->authorize('add', app($dataType->model_name));
 
         // Validate fields with ajax
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
-        $Paciente = Pacientes::select('name', 'email')->find($request->input('paciente_id'));
-        $Doctor = User::select('name', 'email')->find($request->input('user_id'));
-        $name = $request->input('motivo');
-        $value = $request->input('step');
-        $starTime = Carbon::parse($request->input('date') . ' ' . $request->input('time'));
-        $endTime = (clone $starTime)->addMinutes($value);
-
-        // Enviar email al paciente
-        Mail::to($Paciente->email)->send(new EmailCita($name, $starTime, $endTime, $value));
-
-        // Enviar email al Doctor
-        Mail::to($Doctor->email)->send(new EmailCita($name, $starTime, $endTime, $value));
-        dd($endTime);
-        $calendarEvent = new Event;
-        $calendarEvent->name = $name;
-        $calendarEvent->startDateTime = $starTime;
-        $calendarEvent->endDateTime = $endTime;
-        $calendarEvent->save();
-
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
         event(new BreadDataAdded($dataType, $data));
-        //
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
@@ -206,7 +185,7 @@ class CitaController extends BaseVoyagerBaseController
             }
 
             return $redirect->with([
-                'message'    => __('voyager::generic.successfully_added_new') . " {$dataType->getTranslatedAttribute('display_name_singular')}",
+                'message'    => __('voyager::generic.successfully_added_new')." {$dataType->getTranslatedAttribute('display_name_singular')}",
                 'alert-type' => 'success',
             ]);
         } else {
@@ -218,10 +197,6 @@ class CitaController extends BaseVoyagerBaseController
     public function destroy(Request $request, $id)
     {
         $slug = $this->getSlug($request);
-
-        // $event = Event::find($id);
-        // $event->delete();
-
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
         // Init array of IDs

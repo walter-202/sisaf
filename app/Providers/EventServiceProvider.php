@@ -7,6 +7,8 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Models\Servicios;
+use App\Models\Cita;
+use App\Observers\CitasObserver;
 use App\Observers\ScheduleServicesObserver;
 class EventServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Servicios::observe(ScheduleServicesObserver::class);
+        Cita::observe(CitasObserver::class);
     }
 
     /**

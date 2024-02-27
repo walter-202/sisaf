@@ -17,7 +17,6 @@
         <i class="{{ $dataType->icon }}"></i>
         {{ __('voyager::generic.' . ($edit ? 'edit' : 'add')) . ' ' . $dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
-    @include('voyager::multilingual.language-selector')
 @stop
 
 @section('content')
@@ -74,7 +73,6 @@
                                     {{ $row->slugify }}
                                     <label class="control-label"
                                         for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
-                                    @include('voyager::multilingual.input-hidden-bread-edit-add')
                                     @if ($add && isset($row->details->view_add))
                                         @include($row->details->view_add, [
                                             'row' => $row,
@@ -108,15 +106,33 @@
                                             'options' => $row->details,
                                         ])
                                     @elseif ($row->field == 'date')
-                                        <h2 class="label label-success"> Dia seleccionado :</h2>
-                                        <input type="hidden" name="date" id="date_format">
-                                        <input type="hidden" name="step" id="date_step">
+                                        @if ($edit)
+                                            <h2 class="label label-success" id="date"> Dia seleccionado :
+                                                {{ $dataTypeContent->{$row->field} }} </h2>
+                                            <input type="hidden" name="date" id="date_format" value="{{ $dataTypeContent->{$row->field} }}">
+                                            <input type="hidden" name="step" id="date_step">
+                                        @else
+                                            <h2 class="label label-warning" id="date"> Seleccione un horario </h2>
+                                            <input type="hidden" name="date" id="date_format">
+                                            <input type="hidden" name="step" id="date_step">
+                                        @endif
                                     @elseif ($row->field == 'time')
-                                        <fieldset class="flex flex-wrap gap-3" id="horarios">
-                                            <div class="alert alert-warning w-full">
-                                                <h3>Seleccione el servicio a reservar </h3>
-                                            </div>
-                                        </fieldset>
+                                        @if ($edit)
+                                            <fieldset class="flex flex-wrap gap-3" id="horarios">
+                                                <div class="alert alert-success w-full">
+                                                    <h3>Hora Seleccionada :
+                                                        {{ $dataTypeContent->{$row->field} }} </h3>
+                                                </div>
+                                            </fieldset>
+                                            <input type="hidden" name="time" id="time_recovered" value="{{ $dataTypeContent->{$row->field} }}">
+                                        @else
+                                            <fieldset class="flex flex-wrap gap-3" id="horarios">
+                                                <div class="alert alert-warning w-full">
+                                                    <h3>Seleccione el servicio a reservar :
+                                                        {{ $dataTypeContent->{$row->field} }} </h3>
+                                                </div>
+                                            </fieldset>
+                                        @endif
                                     @else
                                         {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
                                     @endif
@@ -252,71 +268,6 @@
             $('#confirm_delete_modal').modal('hide');
         });
         $('[data-toggle="tooltip"]').tooltip();
-    });
-
-    $('select[name="servicio_id"]').on('select2:select', async function(e) {
-        let servicioId = e.params.data.id;
-        {{-- console.log(servicioId); --}}
-        $('#horarios').empty();
-        await obtenerHorarios(servicioId);
-    });
-
-    async function obtenerHorarios(servicioId) {
-        const response = await $.get({
-            url: "https://sisaf.test/api/horarios/" + servicioId,
-            cache: "true",
-            success: function(response) {
-                {{-- console.log(response); --}}
-                const horariosContainer = $('#horarios'); // Obtener el contenedor de los horarios
-                response.forEach(dia => {
-                    const fieldset = $('<fieldset class="flex flex-wrap gap-3"></fieldset>');
-                    const alert = $('<div class="alert alert-info w-full"></div>');
-                    const diaNombre = $('<h3>').text(dia.day_name)
-                    const diaCompleto = $('<h3>').text(dia.date);
-                    const diaStep = $('<h3>').text("Tiempo de consulta : " + dia.step);
-                    alert.append([diaNombre, diaCompleto, diaStep]);
-                    fieldset.append(alert);
-
-                    dia.available_hours.forEach(hora => {
-                        const horaContainer = $('<div>');
-                        const label = $('<label>')
-                            .attr('for',
-                                `hora_${dia.day_name}_${hora.replace(':', '')}`)
-                            .addClass(
-                                'cursor-pointer border border-gray-400 p-2 hover:scale-105 has-[:checked]:bg-blue-400 has-[:checked]:text-white'
-                            );
-                        const input = $('<input type="radio" name="time" />')
-                            .val(hora)
-                            .addClass(
-                                'sr-only'
-                            )
-                            .attr({
-                                'data-date': dia.date_format,
-                                'data-step': dia.step,
-                                'id': `hora_${dia.day_name}_${hora.replace(':', '')}`
-                            });
-
-                        const paragraph = $('<p>')
-                            .text(hora)
-
-                        label.append([input, paragraph]);
-                        horaContainer.append(label);
-                        fieldset.append(horaContainer);
-                    });
-                    horariosContainer.append(fieldset); // Anexar al contenedor principal
-                });
-            }
-        });
-    }
-    $('#horarios').on('change', 'input[type="radio"]', function() {
-        const selectedDate = $(this).data('date');
-        const selectedStep = $(this).data('step');
-        const $label = $('.label.label-success');
-        $label.text('Dia seleccionado : ' + selectedDate);
-        {{-- console.log(selectedDate); --}}
-        //input hidden for selectedDate
-        $('#date_format').val(selectedDate);
-        $('#date_step').val(selectedStep);
     });
 </script>
 @stop

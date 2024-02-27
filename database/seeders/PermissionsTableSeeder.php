@@ -541,53 +541,13 @@ class PermissionsTableSeeder extends Seeder
             ),
             65 => 
             array (
-                'id' => 81,
-                'key' => 'browse_historia',
-                'table_name' => 'historia',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            66 => 
-            array (
-                'id' => 82,
-                'key' => 'read_historia',
-                'table_name' => 'historia',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            67 => 
-            array (
-                'id' => 83,
-                'key' => 'edit_historia',
-                'table_name' => 'historia',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            68 => 
-            array (
-                'id' => 84,
-                'key' => 'add_historia',
-                'table_name' => 'historia',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            69 => 
-            array (
-                'id' => 85,
-                'key' => 'delete_historia',
-                'table_name' => 'historia',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            70 => 
-            array (
                 'id' => 86,
                 'key' => 'browse_historias',
                 'table_name' => 'historias',
                 'created_at' => '2023-12-16 08:39:33',
                 'updated_at' => '2023-12-16 08:39:33',
             ),
-            71 => 
+            66 => 
             array (
                 'id' => 87,
                 'key' => 'read_historias',
@@ -595,7 +555,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-12-16 08:39:33',
                 'updated_at' => '2023-12-16 08:39:33',
             ),
-            72 => 
+            67 => 
             array (
                 'id' => 88,
                 'key' => 'edit_historias',
@@ -603,7 +563,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-12-16 08:39:33',
                 'updated_at' => '2023-12-16 08:39:33',
             ),
-            73 => 
+            68 => 
             array (
                 'id' => 89,
                 'key' => 'add_historias',
@@ -611,7 +571,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-12-16 08:39:33',
                 'updated_at' => '2023-12-16 08:39:33',
             ),
-            74 => 
+            69 => 
             array (
                 'id' => 90,
                 'key' => 'delete_historias',

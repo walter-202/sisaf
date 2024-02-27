@@ -1196,100 +1196,50 @@ class PermissionRoleTableSeeder extends Seeder
             ),
             235 => 
             array (
-                'permission_id' => 81,
+                'permission_id' => 86,
                 'role_id' => 1,
             ),
             236 => 
             array (
-                'permission_id' => 81,
+                'permission_id' => 86,
                 'role_id' => 4,
             ),
             237 => 
             array (
-                'permission_id' => 82,
+                'permission_id' => 87,
                 'role_id' => 1,
             ),
             238 => 
             array (
-                'permission_id' => 82,
+                'permission_id' => 87,
                 'role_id' => 4,
             ),
             239 => 
             array (
-                'permission_id' => 83,
+                'permission_id' => 88,
                 'role_id' => 1,
             ),
             240 => 
             array (
-                'permission_id' => 83,
+                'permission_id' => 88,
                 'role_id' => 4,
             ),
             241 => 
             array (
-                'permission_id' => 84,
+                'permission_id' => 89,
                 'role_id' => 1,
             ),
             242 => 
             array (
-                'permission_id' => 84,
+                'permission_id' => 89,
                 'role_id' => 4,
             ),
             243 => 
             array (
-                'permission_id' => 85,
-                'role_id' => 1,
-            ),
-            244 => 
-            array (
-                'permission_id' => 85,
-                'role_id' => 4,
-            ),
-            245 => 
-            array (
-                'permission_id' => 86,
-                'role_id' => 1,
-            ),
-            246 => 
-            array (
-                'permission_id' => 86,
-                'role_id' => 4,
-            ),
-            247 => 
-            array (
-                'permission_id' => 87,
-                'role_id' => 1,
-            ),
-            248 => 
-            array (
-                'permission_id' => 87,
-                'role_id' => 4,
-            ),
-            249 => 
-            array (
-                'permission_id' => 88,
-                'role_id' => 1,
-            ),
-            250 => 
-            array (
-                'permission_id' => 88,
-                'role_id' => 4,
-            ),
-            251 => 
-            array (
-                'permission_id' => 89,
-                'role_id' => 1,
-            ),
-            252 => 
-            array (
-                'permission_id' => 89,
-                'role_id' => 4,
-            ),
-            253 => 
-            array (
                 'permission_id' => 90,
                 'role_id' => 1,
             ),
-            254 => 
+            244 => 
             array (
                 'permission_id' => 90,
                 'role_id' => 4,

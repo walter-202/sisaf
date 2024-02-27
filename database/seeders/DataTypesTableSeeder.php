@@ -143,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 15:42:10',
-                'updated_at' => '2023-12-08 21:00:15',
+                'updated_at' => '2024-02-26 21:50:39',
             ),
             7 => 
             array (
@@ -161,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-07-14 18:49:58',
-                'updated_at' => '2023-12-08 20:58:57',
+                'updated_at' => '2024-02-26 21:51:34',
             ),
             8 => 
             array (
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":"name","scope":null}',
                 'created_at' => '2023-07-14 18:58:42',
-                'updated_at' => '2024-01-25 21:12:38',
+                'updated_at' => '2024-02-26 21:59:21',
             ),
             10 => 
             array (
@@ -233,7 +233,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-08-02 12:19:34',
-                'updated_at' => '2024-01-30 21:36:33',
+                'updated_at' => '2024-02-26 21:49:26',
             ),
             12 => 
             array (
@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-08-21 02:10:14',
-                'updated_at' => '2024-02-08 18:42:19',
+                'updated_at' => '2024-02-26 21:46:43',
             ),
             13 => 
             array (
@@ -274,24 +274,6 @@ class DataTypesTableSeeder extends Seeder
             14 => 
             array (
                 'id' => 15,
-                'name' => 'historia',
-                'slug' => 'historias-clinicas',
-                'display_name_singular' => 'Historia Clínica',
-                'display_name_plural' => 'Historias Clínicas',
-                'icon' => 'voyager-documentation',
-                'model_name' => 'App\\Models\\Historia',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
-                'created_at' => '2023-11-21 21:45:03',
-                'updated_at' => '2023-11-21 21:45:03',
-            ),
-            15 => 
-            array (
-                'id' => 16,
                 'name' => 'historias',
                 'slug' => 'historias',
                 'display_name_singular' => 'Historia',

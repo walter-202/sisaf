@@ -14,195 +14,195 @@ class HorariosTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('horarios')->delete();
-
+        
         \DB::table('horarios')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'day' => 'Lunes',
                 'from' => '14:00:00',
                 'to' => '17:00:00',
                 'step' => 30,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:59',
                 'deleted_at' => NULL,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'day' => 'Martes',
                 'from' => '14:00:00',
                 'to' => '17:00:00',
                 'step' => 60,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:35:22',
                 'deleted_at' => NULL,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'day' => 'Miercoles',
                 'from' => '14:00:00',
                 'to' => '17:00:00',
                 'step' => 30,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:48',
                 'deleted_at' => NULL,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'day' => 'Jueves',
                 'from' => '14:00:00',
                 'to' => '17:00:00',
                 'step' => 30,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:36',
                 'deleted_at' => NULL,
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'day' => 'Viernes',
                 'from' => '14:00:00',
                 'to' => '17:00:00',
                 'step' => 30,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:23',
                 'deleted_at' => NULL,
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'day' => 'Sabado',
                 'from' => '09:00:00',
                 'to' => '15:00:00',
                 'step' => 30,
-                'off' => 0,
+                'status' => 0,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:05',
                 'deleted_at' => NULL,
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'day' => 'Domingo',
                 'from' => '09:00:00',
                 'to' => '15:00:00',
                 'step' => 30,
-                'off' => 0,
+                'status' => 0,
                 'servicio_id' => 1,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:08',
                 'deleted_at' => NULL,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'day' => 'Lunes',
                 'from' => '14:00:00',
                 'to' => '19:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:59',
                 'deleted_at' => NULL,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'day' => 'Martes',
                 'from' => '09:00:00',
                 'to' => '18:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:35:22',
                 'deleted_at' => NULL,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'day' => 'Miercoles',
                 'from' => '14:00:00',
                 'to' => '19:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:48',
                 'deleted_at' => NULL,
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'day' => 'Jueves',
                 'from' => '09:00:00',
                 'to' => '18:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:36',
                 'deleted_at' => NULL,
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 12,
                 'day' => 'Viernes',
                 'from' => '14:00:00',
                 'to' => '19:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:23',
                 'deleted_at' => NULL,
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 13,
                 'day' => 'Sabado',
                 'from' => '09:00:00',
                 'to' => '12:00:00',
                 'step' => 15,
-                'off' => 1,
+                'status' => 1,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:05',
                 'deleted_at' => NULL,
             ),
-            13 =>
+            13 => 
             array (
                 'id' => 14,
                 'day' => 'Domingo',
                 'from' => '09:00:00',
                 'to' => '15:00:00',
                 'step' => 30,
-                'off' => 0,
+                'status' => 0,
                 'servicio_id' => 2,
                 'created_at' => '2024-01-02 10:55:36',
                 'updated_at' => '2024-01-30 21:03:08',
                 'deleted_at' => NULL,
             ),
         ));
-
-
+        
+        
     }
 }

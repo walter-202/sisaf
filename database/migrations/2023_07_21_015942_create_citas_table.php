@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('servicio_id')->constrained();
             $table->string('motivo');
+            $table->string('g_id')->nullable();
             $table->date('date');
             $table->time('time');
             $table->foreignId('user_id')->constrained();

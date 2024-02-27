@@ -1,7 +1,7 @@
 @component('mail::message')
 
 @component('mail::panel')
-    # Cita Reservada
+# Cita Reservada
 @endcomponent
 
 ## Detalles:

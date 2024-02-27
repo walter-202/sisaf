@@ -21,6 +21,7 @@ class Cita extends Model implements Auditable
         'servicio_id',
         'date',
         'time',
+        'g_id',
         'user_id',
         'paciente_id',
     ];

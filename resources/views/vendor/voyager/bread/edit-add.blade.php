@@ -17,7 +17,6 @@
         <i class="{{ $dataType->icon }}"></i>
         {{ __('voyager::generic.' . ($edit ? 'edit' : 'add')) . ' ' . $dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
-    @include('voyager::multilingual.language-selector')
 @stop
 
 @section('content')
@@ -74,7 +73,6 @@
                                     {{ $row->slugify }}
                                     <label class="control-label"
                                         for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
-                                    @include('voyager::multilingual.input-hidden-bread-edit-add')
                                     @if ($add && isset($row->details->view_add))
                                         @include($row->details->view_add, [
                                             'row' => $row,

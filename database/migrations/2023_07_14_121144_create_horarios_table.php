@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('from');
             $table->time('to');
             $table->unsignedInteger('step')->default(60);
-            $table->boolean('off')->default(false);
+            $table->boolean('status')->default(false);
             $table->foreignId('servicio_id')->constrained();
             $table->timestamps();
             $table->softDeletes();

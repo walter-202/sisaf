@@ -186,7 +186,7 @@ return [
     |
     */
 
-    'voyager.primary_color' => '#ff7cf2',
+    'voyager.primary.color' => '#7600a5',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 

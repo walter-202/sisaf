@@ -26,10 +26,10 @@ class CitaService
             'date_format' => $date->format('Y-m-d'),
             'step' => $horario->step,
             'available_hours' => $horasDisponibles,
-            'reserved_hours' => $currentCita,
             'business_hours' => $horas,
+            'reserved_hours' => $currentCita,
             'servicio_id' => $serviceId,
-            'off' => $horario->off
+            'off' => $horario->status
         ];
     }
 }
