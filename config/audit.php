@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'user'      => [
+    'user' => [
         'morph_prefix' => 'user',
         'guards'       => [
             'web',
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'empty_values'         => true,
+    'empty_values'         => false,
     'allowed_empty_values' => [
         'retrieved'
     ],

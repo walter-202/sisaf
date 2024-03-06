@@ -20,10 +20,9 @@ class ScheduleServicesObserver
                 'from' => '09:00',
                 'to' => '17:00',
                 'step'=> 30,
-                'off' => 0,
+                'status' => 0,
                 'servicio_id' => $servicios->id,
-            ]
-            );
+            ]);
             $horarios->save();
         }
     }
@@ -48,14 +47,6 @@ class ScheduleServicesObserver
      * Handle the Servicios "restored" event.
      */
     public function restored(Servicios $servicios): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Servicios "force deleted" event.
-     */
-    public function forceDeleted(Servicios $servicios): void
     {
         //
     }

@@ -21,13 +21,13 @@ class CrearHistoria extends AbstractAction
     }
     public function getPolicy()
     {
-        return 'read';
+        return 'create';
     }
 
     public function getAttributes()
     {
         return [
-            'class' => 'btn btn-md btn-info pull-right',
+            'class' => 'btn btn-md btn-success pull-right',
             'data-id' => $this->data->{$this->data->getKeyName()},
             'id'      => 'delete-'.$this->data->{$this->data->getKeyName()},
         ];
@@ -35,6 +35,6 @@ class CrearHistoria extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.citas.index');
+        return route('voyager.historias.index');
     }
 }

@@ -110,11 +110,15 @@
                                             <h2 class="label label-success" id="date"> Dia seleccionado :
                                                 {{ $dataTypeContent->{$row->field} }} </h2>
                                             <input type="hidden" name="date" id="date_format" value="{{ $dataTypeContent->{$row->field} }}">
-                                            <input type="hidden" name="step" id="date_step">
                                         @else
                                             <h2 class="label label-warning" id="date"> Seleccione un horario </h2>
                                             <input type="hidden" name="date" id="date_format">
-                                            <input type="hidden" name="step" id="date_step">
+                                        @endif
+                                        @elseif ($row->field == 'duracion')
+                                        @if ($edit)
+                                            <input type="hidden" name="duracion" id="date_step" value="{{ $dataTypeContent->{$row->field} }}">
+                                        @else
+                                            <input type="hidden" name="duracion" id="date_step">
                                         @endif
                                     @elseif ($row->field == 'time')
                                         @if ($edit)

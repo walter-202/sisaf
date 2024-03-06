@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use OwenIt\Auditing\Redactors\LeftRedactor;
 
 
 class User extends \TCG\Voyager\Models\User implements Auditable
@@ -30,6 +31,9 @@ class User extends \TCG\Voyager\Models\User implements Auditable
         'password',
     ];
     protected $dates = ['deleted_at'];
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
     public function scopeAllowed($query)
     {
@@ -47,27 +51,18 @@ class User extends \TCG\Voyager\Models\User implements Auditable
         return  $this->name . ' ' . $this->email . ' ' . $this->role->name;
     }
     public $additional_attributes = ['full_data'];
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+    protected $attributeModifiers = [
+        'password' => LeftRedactor::class,
     ];
     protected $auditExclude = [
         'remember_token',
         'id',
         'email_verified_at',
         'settings',
-    ];
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }

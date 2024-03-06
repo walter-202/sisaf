@@ -12,24 +12,26 @@ class CitaService
     {
         $dayName = $date->isoFormat('dddd');
         $horario = Horarios::where('day', $dayName)
-        ->where('servicio_id', $serviceId)
-        ->first();
+            ->where('servicio_id', $serviceId)
+            ->first();
         $horas = array_filter($horario->TimesPeriod);
         $currentCita = Cita::where('servicio_id', $serviceId)
-        ->where('date', $date->toDateString())->pluck('time')->map(function ($time) {
-            return Carbon::parse($time)->format('H:i');
-        })->toArray();
+            ->where('date', $date->toDateString())->pluck('time')->map(function ($time) {
+                return Carbon::parse($time)->format('H:i');
+            })->toArray();
         $horasDisponibles = array_diff($horas, $currentCita);
-        return [
-            'day_name' => $dayName,
-            'date' => $date->isoFormat('LL'),
-            'date_format' => $date->format('Y-m-d'),
-            'step' => $horario->step,
-            'available_hours' => $horasDisponibles,
-            'business_hours' => $horas,
-            'reserved_hours' => $currentCita,
-            'servicio_id' => $serviceId,
-            'off' => $horario->status
-        ];
+        if ($horasDisponibles != null) {
+            return [
+                'day_name' => $dayName,
+                'date' => $date->isoFormat('LL'),
+                'date_format' => $date->format('Y-m-d'),
+                'step' => $horario->step,
+                'business_hours' => $horas,
+                'reserved_hours' => $currentCita,
+                'available_hours' => $horasDisponibles,
+                'servicio_id' => $serviceId,
+                'off' => $horario->status
+            ];
+        }
     }
 }

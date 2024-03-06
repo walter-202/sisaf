@@ -14,12 +14,12 @@ class AuditsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('audits')->delete();
-        
+
         \DB::table('audits')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'user_type' => 'App\\Models\\User',
@@ -37,7 +37,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-15 11:18:11',
                 'deleted_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'user_type' => 'App\\Models\\User',
@@ -46,7 +46,7 @@ class AuditsTableSeeder extends Seeder
                 'auditable_type' => 'App\\Models\\User',
                 'auditable_id' => 6,
                 'old_values' => '[]',
-                'new_values' => '{"id":6,"role_id":3,"name":"Enfermera Guadalupe","email":"guadalupe33@gmail.com","avatar":"users\\/default.png","email_verified_at":null,"password":"$2y$10$8ZpSWlurgR1XDb7T3ZSOn.CPsw6wvwyqpr92H8M9SxPEz2w\\/wpCye","remember_token":null,"settings":null}',
+                'new_values' => '{"id":6,"role_id":3,"name":"Enfermera Guadalupe","email":"guadalupe33@gmail.com","avatar":"users\\/default.png","email_verified_at":null,"remember_token":null,"settings":null}',
                 'url' => 'https://sisaf.test/admin/users/6/restore',
                 'ip_address' => '127.0.0.1',
             'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -55,7 +55,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-16 10:36:35',
                 'deleted_at' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'user_type' => 'App\\Models\\User',
@@ -64,7 +64,7 @@ class AuditsTableSeeder extends Seeder
                 'auditable_type' => 'App\\Models\\User',
                 'auditable_id' => 6,
                 'old_values' => '[]',
-                'new_values' => '{"role_id":3,"name":"Enfermera Guadalupe","email":"guadalupe33@gmail.com","avatar":"users\\/default.png","password":"$2y$10$8ZpSWlurgR1XDb7T3ZSOn.CPsw6wvwyqpr92H8M9SxPEz2w\\/wpCye"}',
+                'new_values' => '{"role_id":3,"name":"Enfermera Guadalupe","email":"guadalupe33@gmail.com","avatar":"users\\/default.png"}',
                 'url' => 'https://sisaf.test/admin/users/6/restore',
                 'ip_address' => '127.0.0.1',
             'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -73,7 +73,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-18 02:29:02',
                 'deleted_at' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'user_type' => 'App\\Models\\User',
@@ -91,7 +91,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'user_type' => 'App\\Models\\User',
@@ -109,7 +109,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'user_type' => 'App\\Models\\User',
@@ -127,7 +127,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'user_type' => 'App\\Models\\User',
@@ -145,7 +145,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'user_type' => 'App\\Models\\User',
@@ -163,7 +163,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'user_type' => 'App\\Models\\User',
@@ -181,7 +181,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'user_type' => 'App\\Models\\User',
@@ -199,7 +199,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 11,
                 'user_type' => 'App\\Models\\User',
@@ -217,368 +217,8 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-30 20:39:53',
                 'deleted_at' => NULL,
             ),
-            11 => 
-            array (
-                'id' => 12,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 2,
-                'old_values' => '{"step":30,"off":0}',
-                'new_values' => '{"step":"60","off":1}',
-                'url' => 'https://sisaf.test/admin/horarios/2',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 20:40:04',
-                'updated_at' => '2024-01-30 20:40:04',
-                'deleted_at' => NULL,
-            ),
-            12 => 
-            array (
-                'id' => 13,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 2,
-                'old_values' => '{"to":"15:00:00"}',
-                'new_values' => '{"to":"12:00"}',
-                'url' => 'https://sisaf.test/admin/horarios/2',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 20:40:17',
-                'updated_at' => '2024-01-30 20:40:17',
-                'deleted_at' => NULL,
-            ),
-            13 => 
-            array (
-                'id' => 14,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 6,
-                'old_values' => '{"off":1}',
-                'new_values' => '{"off":0}',
-                'url' => 'https://sisaf.test/admin/horarios/6',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:05',
-                'updated_at' => '2024-01-30 21:03:05',
-                'deleted_at' => NULL,
-            ),
-            14 => 
-            array (
-                'id' => 15,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 7,
-                'old_values' => '{"off":1}',
-                'new_values' => '{"off":0}',
-                'url' => 'https://sisaf.test/admin/horarios/7',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:08',
-                'updated_at' => '2024-01-30 21:03:08',
-                'deleted_at' => NULL,
-            ),
-            15 => 
-            array (
-                'id' => 16,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 5,
-                'old_values' => '{"from":"09:00:00","to":"15:00:00","off":0}',
-                'new_values' => '{"from":"14:00","to":"17:00","off":1}',
-                'url' => 'https://sisaf.test/admin/horarios/5',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:23',
-                'updated_at' => '2024-01-30 21:03:23',
-                'deleted_at' => NULL,
-            ),
-            16 => 
-            array (
-                'id' => 17,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 4,
-                'old_values' => '{"from":"09:00:00","to":"15:00:00","off":0}',
-                'new_values' => '{"from":"14:00","to":"17:00","off":1}',
-                'url' => 'https://sisaf.test/admin/horarios/4',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:36',
-                'updated_at' => '2024-01-30 21:03:36',
-                'deleted_at' => NULL,
-            ),
-            17 => 
-            array (
-                'id' => 18,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 3,
-                'old_values' => '{"from":"09:00:00","to":"15:00:00","off":0}',
-                'new_values' => '{"from":"14:00","to":"17:00","off":1}',
-                'url' => 'https://sisaf.test/admin/horarios/3',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:47',
-                'updated_at' => '2024-01-30 21:03:47',
-                'deleted_at' => NULL,
-            ),
-            18 => 
-            array (
-                'id' => 19,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 3,
-                'old_values' => '{"from":"14:00:00","to":"17:00:00"}',
-                'new_values' => '{"from":"14:00","to":"17:00"}',
-                'url' => 'https://sisaf.test/admin/horarios/3',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:48',
-                'updated_at' => '2024-01-30 21:03:48',
-                'deleted_at' => NULL,
-            ),
-            19 => 
-            array (
-                'id' => 20,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 1,
-                'old_values' => '{"from":"09:00:00","to":"15:00:00","off":0}',
-                'new_values' => '{"from":"14:00","to":"17:00","off":1}',
-                'url' => 'https://sisaf.test/admin/horarios/1',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:03:59',
-                'updated_at' => '2024-01-30 21:03:59',
-                'deleted_at' => NULL,
-            ),
-            20 => 
-            array (
-                'id' => 21,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 2,
-                'old_values' => '{"to":"12:00:00"}',
-                'new_values' => '{"to":"17:00"}',
-                'url' => 'https://sisaf.test/admin/horarios/2',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:34:51',
-                'updated_at' => '2024-01-30 21:34:51',
-                'deleted_at' => NULL,
-            ),
-            21 => 
-            array (
-                'id' => 22,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 2,
-                'old_values' => '{"from":"10:00:00"}',
-                'new_values' => '{"from":"14:00"}',
-                'url' => 'https://sisaf.test/admin/horarios/2',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-01-30 21:35:22',
-                'updated_at' => '2024-01-30 21:35:22',
-                'deleted_at' => NULL,
-            ),
-            22 => 
-            array (
-                'id' => 23,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Servicios',
-                'auditable_id' => 2,
-                'old_values' => '[]',
-                'new_values' => '{"name":"prueba","precio":"50"}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            23 => 
-            array (
-                'id' => 24,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 8,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Lunes","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            24 => 
-            array (
-                'id' => 25,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 9,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Martes","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            25 => 
-            array (
-                'id' => 26,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 10,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Mi\\u00e9rcoles","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            26 => 
-            array (
-                'id' => 27,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 11,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Jueves","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            27 => 
-            array (
-                'id' => 28,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 12,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Viernes","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            28 => 
-            array (
-                'id' => 29,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 13,
-                'old_values' => '[]',
-                'new_values' => '{"day":"S\\u00e1bado","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            29 => 
-            array (
-                'id' => 30,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'created',
-                'auditable_type' => 'App\\Models\\Horarios',
-                'auditable_id' => 14,
-                'old_values' => '[]',
-                'new_values' => '{"day":"Domingo","from":"09:00","to":"17:00","step":30,"off":0,"servicio_id":2}',
-                'url' => 'https://sisaf.test/admin/servicios',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-03 20:40:51',
-                'updated_at' => '2024-02-03 20:40:51',
-                'deleted_at' => NULL,
-            ),
-            30 => 
-            array (
-                'id' => 31,
-                'user_type' => 'App\\Models\\User',
-                'user_id' => 2,
-                'event' => 'updated',
-                'auditable_type' => 'App\\Models\\Cita',
-                'auditable_id' => 1,
-                'old_values' => '{"date":"2024-01-02"}',
-                'new_values' => '{"date":"2024-01-03T04:00:00.000000Z"}',
-                'url' => 'https://sisaf.test/admin/citas/1',
-                'ip_address' => '127.0.0.1',
-            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'tags' => NULL,
-                'created_at' => '2024-02-04 00:49:00',
-                'updated_at' => '2024-02-04 00:49:00',
-                'deleted_at' => NULL,
-            ),
         ));
-        
-        
+
+
     }
 }

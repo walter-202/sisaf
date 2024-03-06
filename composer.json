@@ -1,11 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "name": "walter-202/citas",
+    "description": "Creador de citas con Google y voyager.",
     "license": "MIT",
     "require": {
         "php": "^8.0.2",

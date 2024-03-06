@@ -28,7 +28,7 @@ class UserController  extends BaseVoyagerBaseController
     {
         if (Auth::user()->getKey() == $id) {
             $request->merge([
-                'role_id'                              => Auth::user()->role_id,
+                'role_id' => Auth::user()->role_id,
             ]);
         }
 

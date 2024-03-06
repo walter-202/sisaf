@@ -1,14 +1,16 @@
 import { defineConfig, loadEnv } from 'vite';
 import laravel from 'laravel-vite-plugin';
-
 import fs from 'fs';
 const env = loadEnv('all', process.cwd());
 
 export default defineConfig({
+    build: {
+        manifest: 'manifest.json',
+    },
     plugins: [
         laravel({
             input: ['resources/assets/css/app.css',
-                    'resources/assets/js/app.js'],
+                'resources/assets/js/app.js'],
             refresh: true,
         }),
     ],

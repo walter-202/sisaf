@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Carbon\CarbonInterval;
+use Carbon\Carbon;
 
 class Horarios extends Model implements Auditable
 {
@@ -37,15 +38,13 @@ class Horarios extends Model implements Auditable
 
     public function getTimesPeriodAttribute()
     {
-        $times = CarbonInterval::minutes($this->step)->toPeriod($this->from, $this->to)->toArray();
-
-        return array_map(function ($time) {
-
-            if ($this->day == today()->isoFormat('LL') &&  !$time->isPast()) {
+        $hoy = Carbon::now()->isoFormat('dddd');
+        $times = CarbonInterval::minutes($this->step)->toPeriod($this->from, $this->to)->excludeEndDate()->toArray();
+        return array_map(function ($time) use($hoy) {
+            if ( $this->day == $hoy && !$time->isPast() ) {
                 return $time->format('H:i');
             }
-
-            if ($this->day != today()->isoFormat('LL')) {
+            if ( $this->day != $hoy ){
                 return $time->format('H:i');
             }
         }, $times);

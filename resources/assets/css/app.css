@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-.toggle.btn{
-    min-width:170px;
+html,
+body {
+    color: #505962;
 }
-.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container{
+
+.toggle.btn {
+    min-width: 170px;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container {
     width: 40px;
 }
-.app-container .content-container .side-menu .navbar-header .navbar-brand{
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand {
     width: 455px;
 }
-.table-hover>tbody>tr:hover, .table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
+
+.table-hover>tbody>tr:hover,
+.table>tbody>tr.active>td,
+.table>tbody>tr.active>th,
+.table>tbody>tr>td.active,
+.table>tbody>tr>th.active,
+.table>tfoot>tr.active>td,
+.table>tfoot>tr.active>th,
+.table>tfoot>tr>td.active,
+.table>tfoot>tr>th.active,
+.table>thead>tr.active>td,
+.table>thead>tr.active>th,
+.table>thead>tr>td.active,
+.table>thead>tr>th.active {
     background-color: #d6d6d6;
 }
+
 .navbar .navbar-nav>li>a {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .panel.widget p {
     font-size: 14px;
     line-height: 1.5;
     margin: 10px 0 0;
 }
-

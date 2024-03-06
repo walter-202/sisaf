@@ -74,7 +74,7 @@
                                     'label-primary' => $dataTypeContent->event == 'updated',
                                     'label-success' => $dataTypeContent->event == 'restored',
                                 ])>
-                                    {{ $dataTypeContent->event }}
+                                    {{ trans('auditoria.'. $dataTypeContent->event) }}
                                 </span>
                             @elseif ($row->field == 'auditable_type')
                                 @include('voyager::multilingual.input-hidden-bread-read')
@@ -85,7 +85,7 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <div>
                                     <table class="table">
-                                        @foreach ($dataTypeContent->old_values as $attribute => $value)
+                                        @forelse ($dataTypeContent->old_values as $attribute => $value)
                                             <tr>
                                                 <td><b class="label label-primary">{{ $attribute }}:</b>
                                                 </td>
@@ -93,14 +93,18 @@
                                                     {{ $value }}
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        @empty
+                                            <tr>
+                                                {{ 'No hay datos' }}
+                                            </tr>
+                                        @endforelse
                                     </table>
                                 </div>
                             @elseif ($row->field == 'new_values')
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <div>
                                     <table class="table">
-                                        @foreach ($dataTypeContent->new_values as $attribute => $value)
+                                        @forelse ($dataTypeContent->new_values as $attribute => $value)
                                             <tr>
                                                 <td><b class="label label-primary">{{ $attribute }}:</b>
                                                 </td>
@@ -108,7 +112,11 @@
                                                     {{ $value }}
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        @empty
+                                            <tr>
+                                                {{ 'No hay datos' }}
+                                            </tr>
+                                        @endforelse
                                     </table>
                                 </div>
                             @else

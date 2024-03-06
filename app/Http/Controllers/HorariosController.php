@@ -171,7 +171,6 @@ class HorariosController extends BaseVoyagerBaseController
             $view = "voyager::$slug.browse";
         }
 
-// dd($dataTypeContent);
         return Voyager::view($view, compact(
             'actions',
             'dataType',

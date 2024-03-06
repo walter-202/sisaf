@@ -327,7 +327,28 @@
             </div>
         </div>
     </div>
-
+    <div class="modal modal-primary fade" tabindex="-1" id="delete_modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="{{ __('voyager::generic.close') }}"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }}
+                        {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
+                </div>
+                <div class="modal-body">
+                    <p> No se puede borrar un único horario. Si borra un servicio los horarios que estén conectados a ese
+                        servicio se borrarán de forma automática.</p>
+                    <p> Borrar los datos puede generar una pérdida irreversible de los datos, así que hágalo solo si es
+                        necesario.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="delete_form" class="btn btn-info pull-right"
+                        data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 @stop
 
 @section('css')

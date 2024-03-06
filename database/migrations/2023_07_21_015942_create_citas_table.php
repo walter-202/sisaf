@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('g_id')->nullable();
             $table->date('date');
             $table->time('time');
+            $table->smallInteger('duracion');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('paciente_id')->constrained();
             $table->timestamps();
