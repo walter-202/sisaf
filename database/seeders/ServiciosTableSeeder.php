@@ -37,6 +37,15 @@ class ServiciosTableSeeder extends Seeder
                 'updated_at' => '2023-07-18 01:34:26',
                 'deleted_at' => NULL,
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Fisioterapia',
+                'precio' => '50',
+                'created_at' => '2023-07-18 01:34:26',
+                'updated_at' => '2023-07-18 01:34:26',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

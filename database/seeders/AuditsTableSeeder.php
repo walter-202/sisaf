@@ -14,12 +14,12 @@ class AuditsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('audits')->delete();
-
+        
         \DB::table('audits')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'user_type' => 'App\\Models\\User',
@@ -37,7 +37,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-15 11:18:11',
                 'deleted_at' => NULL,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'user_type' => 'App\\Models\\User',
@@ -55,7 +55,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-16 10:36:35',
                 'deleted_at' => NULL,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'user_type' => 'App\\Models\\User',
@@ -73,7 +73,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2023-12-18 02:29:02',
                 'deleted_at' => NULL,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'user_type' => 'App\\Models\\User',
@@ -91,7 +91,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'user_type' => 'App\\Models\\User',
@@ -109,7 +109,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'user_type' => 'App\\Models\\User',
@@ -127,7 +127,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'user_type' => 'App\\Models\\User',
@@ -145,7 +145,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'user_type' => 'App\\Models\\User',
@@ -163,7 +163,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'user_type' => 'App\\Models\\User',
@@ -181,7 +181,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'user_type' => 'App\\Models\\User',
@@ -199,7 +199,7 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-16 21:14:55',
                 'deleted_at' => NULL,
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'user_type' => 'App\\Models\\User',
@@ -217,8 +217,98 @@ class AuditsTableSeeder extends Seeder
                 'updated_at' => '2024-01-30 20:39:53',
                 'deleted_at' => NULL,
             ),
+            11 => 
+            array (
+                'id' => 12,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'created',
+                'auditable_type' => 'App\\Models\\Cita',
+                'auditable_id' => 6,
+                'old_values' => '[]',
+                'new_values' => '{"motivo":"Prueba 3","servicio_id":"3","user_id":"2","paciente_id":"1","date":"2024-03-25T04:00:00.000000Z","duracion":"15","time":"2024-03-19T18:15:00.000000Z"}',
+                'url' => 'https://sisaf.test/admin/citas',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2024-03-19 20:20:57',
+                'updated_at' => '2024-03-19 20:20:57',
+                'deleted_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\Cita',
+                'auditable_id' => 6,
+                'old_values' => '{"motivo":null,"servicio_id":null,"user_id":null,"paciente_id":null,"date":null,"duracion":null,"time":null,"g_id":null}',
+                'new_values' => '{"motivo":"Prueba 3","servicio_id":"3","user_id":"2","paciente_id":"1","date":"2024-03-25T04:00:00.000000Z","duracion":"15","time":"2024-03-19T18:15:00.000000Z","g_id":"5khto8jfotalcfakce4im7udp0"}',
+                'url' => 'https://sisaf.test/admin/citas',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2024-03-19 20:20:58',
+                'updated_at' => '2024-03-19 20:20:58',
+                'deleted_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\User',
+                'auditable_id' => 3,
+                'old_values' => '{"role_id":3}',
+                'new_values' => '{"role_id":"7"}',
+                'url' => 'https://cdd3-200-105-212-88.ngrok-free.app/admin/users/3',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2024-03-19 21:38:24',
+                'updated_at' => '2024-03-19 21:38:24',
+                'deleted_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'created',
+                'auditable_type' => 'App\\Models\\Cita',
+                'auditable_id' => 7,
+                'old_values' => '[]',
+                'new_values' => '{"motivo":"Ecografia TEST","servicio_id":"3","user_id":"2","paciente_id":"1","date":"2024-03-29T04:00:00.000000Z","duracion":"15","time":"2024-03-23T18:30:00.000000Z"}',
+                'url' => 'https://sisaf.test/admin/citas',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2024-03-23 18:16:55',
+                'updated_at' => '2024-03-23 18:16:55',
+                'deleted_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'user_type' => 'App\\Models\\User',
+                'user_id' => 2,
+                'event' => 'updated',
+                'auditable_type' => 'App\\Models\\Cita',
+                'auditable_id' => 7,
+                'old_values' => '{"motivo":null,"servicio_id":null,"user_id":null,"paciente_id":null,"date":null,"duracion":null,"time":null,"g_id":null}',
+                'new_values' => '{"motivo":"Ecografia TEST","servicio_id":"3","user_id":"2","paciente_id":"1","date":"2024-03-29T04:00:00.000000Z","duracion":"15","time":"2024-03-23T18:30:00.000000Z","g_id":"29qpgu4dqjj06mkcml4cbntm5o"}',
+                'url' => 'https://sisaf.test/admin/citas',
+                'ip_address' => '127.0.0.1',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+                'tags' => NULL,
+                'created_at' => '2024-03-23 18:16:57',
+                'updated_at' => '2024-03-23 18:16:57',
+                'deleted_at' => NULL,
+            ),
         ));
-
-
+        
+        
     }
 }

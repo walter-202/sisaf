@@ -16,3 +16,7 @@ yarn-error.log
 /.idea
 /.vscode
 .env
+.fly/entrypoint.sh
+.fly/scripts/caches.sh
+fly.toml
+Dockerfile

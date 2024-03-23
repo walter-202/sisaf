@@ -26,8 +26,8 @@ class CitasObserver
     public function __construct(Request $request, Pacientes $paciente, User $doctor)
     {
         $this->request = $request;
-        $this->paciente = $paciente;
-        $this->doctor = $doctor;
+        $this->paciente = Pacientes::select('email')->find($this->request->input('paciente_id'));
+        $this->doctor =  User::select('email')->find($this->request->input('user_id'));
         $this->value = $this->request->input('duracion');
         $this->motivo = $this->request->input('motivo');
         $this->inicio = Carbon::parse($this->request->input('date') . ' ' . $this->request->input('time'));
@@ -35,9 +35,9 @@ class CitasObserver
 
     }
 
-    private function enviarEmail($motivo, $inicio, $fin, $value)
+    private function enviarEmail($motivo, $inicio, $fin, $value, $paciente, $doctor)
     {
-        foreach ([$this->paciente->email, $this->doctor->email] as $recipient) {
+        foreach ([$paciente, $doctor] as $recipient) {
             Mail::to($recipient)->send(new EmailCita($motivo, $inicio, $fin, $value));
         }
     }
@@ -50,7 +50,7 @@ class CitasObserver
         $event->endDateTime  =  $this->fin;
         $google_id = $event->save();
         $cita->update(['g_id' => $google_id->id]);
-        $this->enviarEmail($this->motivo, $this->inicio, $this->fin, $this->value);
+        $this->enviarEmail($this->motivo, $this->inicio, $this->fin, $this->value, $this->paciente, $this->doctor);
     }
 
     /**
@@ -83,6 +83,9 @@ class CitasObserver
     {
         $inicio = Carbon::parse($cita->date . ' ' . $cita->time);
         $fin = (clone $inicio)->addMinutes($cita->duracion);
+        $paciente = Pacientes::select('email')->find($cita->paciente_id);
+        $doctor =  User::select('email')->find($cita->user_id);
+        $this->enviarEmail($cita->motivo, $inicio, $fin, $cita->duracion, $paciente, $doctor);
         $event = new Event;
         $event->name = $cita->motivo;
         $event->startDateTime  = $inicio;

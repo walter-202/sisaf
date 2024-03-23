@@ -43,4 +43,8 @@ class Pacientes extends Model implements Auditable
         return $this->name . ' ' . $this->last_name . ' ' . $this->last_name_m ;
     }
     public $additional_attributes = ['full_data', 'full_name'];
+    public function citas()
+{
+    return $this->hasMany(Cita::class);
+}
 }

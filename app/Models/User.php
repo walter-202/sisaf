@@ -34,6 +34,10 @@ class User extends \TCG\Voyager\Models\User implements Auditable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function citas()
+{
+    return $this->hasMany(Cita::class);
+}
 
     public function scopeAllowed($query)
     {

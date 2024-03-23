@@ -33,7 +33,7 @@ class PacientesFactory extends Factory
             'name' => fake()->name(),
             'last_name' => fake()->lastName(),
             'last_name_m' => fake()->lastName(),
-            'email' => fake()->unique()->safeEmail(),
+            'email' => fake()->unique()->email(),
             'celular' => fake()->numerify('7######'),
             'sexo' => $gender[rand(0,1)],
             'ciudad'=> $cities[rand(0,8)],
